@@ -1,0 +1,39 @@
+/* Juleheltene - stylesheet 
+
+  Udviklet af Maja, Henrik og Steffen - Kreativ Reklame, efteråret 2013
+  MDU - Aarhus Erhvervsakademi 
+  www.juleheltene.pixelab.dk 
+
+  Siden er udviklet til Julehjælp
+
+
+
+  Versionsstyring
+  0.1
+  - Standard siden er sat op
+  - SASS + Compass installeret 
+
+
+*/
+
+
+/* Importerer reset */
+@import 'reset.css';
+
+/* Definerer charset */
+@charset "UTF-8";
+
+
+/* Viewport til IE */
+@viewport{
+    width: device-width;
+} 
+@-ms-viewport{ /* Specielt til IE10 */
+    width: device-width;
+}
+
+
+
+
+
+@import "compass/reset";
