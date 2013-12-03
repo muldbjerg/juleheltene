@@ -19,10 +19,13 @@
 
 /* Importerer reset */
 @import 'reset.css';
+@import 'bootstrap.min.css';
 
 /* Definerer charset */
 @charset "UTF-8";
 
+/* Importeret google webfont */
+@import url(http://fonts.googleapis.com/css?family=Oswald);
 
 /* Viewport til IE */
 @viewport{
@@ -33,7 +36,21 @@
 }
 
 
+// Standard opsætning af siden
+body{
+  font-family: 'Georgia', serif;
+  font-style:italic;
+}
 
+#wrapper {
+  max-width:960px;
+  width:95%;
+  margin:0 auto;
+}
 
+h1, h2, h3, h4, h5, h6{
+  font-family: 'Oswald', sans-serif;
+  text-transform:uppercase;
+  font-style:normal;
+}
 
-@import "compass/reset";
