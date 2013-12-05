@@ -18,14 +18,12 @@
 	)") OR DIE(mysql_error());
 
 
-	CREATE TABLE events(
-	    id INT AUTO_INCREMENT PRIMARY KEY,
-	    name VARCHAR(200),
-	    description VARCHAR(1000),
-	    location VARCHAR(200),
-	    start DATETIME,
-	    slut DATETIME,
-	    link VARCHAR(300)
+	CREATE TABLE children(
+	    child_id INT AUTO_INCREMENT PRIMARY KEY,
+	    name VARCHAR(400),
+	    age INT(200),
+	    gender VARCHAR(50),
+	    family_id INT(1000)
 	)
 
 ?>

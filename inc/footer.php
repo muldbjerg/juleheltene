@@ -5,7 +5,6 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="js/createhero.js"></script>
 <script src="js/createfamily.js"></script>
-<script src="js/createtest.js"></script>
 
 
 

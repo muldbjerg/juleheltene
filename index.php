@@ -66,16 +66,7 @@
 
 		?>
 	</div>
-	<div class="col-md-8">
-		<h3>Opret familie-konto</h3>
-		<form id="createTest" method="post" action="functions/createtest.php">
-			<input name="firstname">
-			<form id="form1" method="post">
-				<input name="name">
-			</form>
-			<input type="submit" value="Send"> 
-		</form>
-	</div>
+
 
 </div> <!-- Slut på #wrapper -->
 

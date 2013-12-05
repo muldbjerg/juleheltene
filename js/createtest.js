@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	var createTest = $('#createTest'),
+	var createTest = $('#createChild'),
 		form1 = $('#form1'),
 		name = $('#name');
 

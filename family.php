@@ -38,6 +38,41 @@
 		<p>Oprettet <?php echo $created ?></p>
 
 	</div>
+	<div class="col-md-8">
+		<h3>Families børn</h3>
+		
+		<?php
+			// Henter connecting elementerne til databasen
+			include_once('functions/connect.php');
+
+			// Indhenter informationer omkring brugerne
+			$children = mysql_query('SELECT * FROM children WHERE family_id LIKE "' . $id . '"');
+
+			while($child = mysql_fetch_assoc($children)) { //Lav en while der kører alle rækker igennem
+				echo "<p>" . $child['name'] . ", " . $child['age'] . " år</p>";  
+			}
+
+		?>
+
+	</div>
+
+	<div class="col-md-8 col-md-offset-4">
+		<h3>Opret børn</h3>
+
+		<button id="addChild">Tilføj endnu et barn</button>
+
+		<form id="createChild" method="post" action="functions/createChild.php">
+			<input name="childname[]" placeholder="Skriv navn">
+			<input name="childage[]" placeholder="Skriv alder">
+			<select name="childgender[]">
+			  <option value="man">Dreng</option>
+			  <option value="woman">Pige</option>
+			</select>
+			<select class="displayNone" name="family_id"><option value="<?php echo $id ?>">12</option></select>
+			<input type="submit" value="Opret børn">
+		</form>
+
+	</div>
 
 </div> <!-- Slut på #wrapper -->
 
@@ -45,8 +80,9 @@
 
 
 
-
-
 <?php
+
 	include('inc/footer.php');
+	echo "<script src='js/createChild.js'></script>";
+
 ?>
