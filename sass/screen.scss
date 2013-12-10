@@ -84,12 +84,25 @@ body{
 
 .content{
   margin-top:30px;
-  margin-bottom:100px;
   background-color:$backwhite;
+  clear:both;
+}
+footer{
+  background-image:url('../img/footerSnow.png');
+  margin-top:300px;
+  background-position:bottom;
+  height:38px;
+    img{
+      margin-top:-175px;
+      margin-right:0px;
+      float:right; 
+      overflow:hidden;
+    }
 }
 
 button{
   @include oswald;
+  font-size:20px;
   background-color:transparent;
   border-radius:4px;
   border:2px $darkblue solid;
@@ -104,13 +117,11 @@ button{
       -webkit-transition: background-color 0.3s ease-in, color 0.3s;
     }
 }
-
 #buttonDiv{
-  width:75px;
+  width:90px;
   margin:20px auto 50px auto;
 }
 .theend{
-  margin-bottom:35px;
   clear:both;
 }
 hr{
@@ -145,7 +156,7 @@ a, a:visited, a:hover{
   position:absolute;
   background-color:$secoundblue;
   color:#fff; 
-  margin-left:75%;
+  margin-left:755px;
   cursor:pointer;
   transition: height 0.25s, padding-top 0.25s;
   -webkit-transition: height 0.25s, padding-top 0.25s ;
@@ -332,7 +343,7 @@ a, a:visited, a:hover{
 
 #countUp{
   @include oswald;
-  padding-top:30px;
+  padding:30px 0;
   text-align:center;
   
     p:nth-child(2){
@@ -347,6 +358,153 @@ a, a:visited, a:hover{
 #handbook img{
   width:100%;
   margin:0 auto;
+  padding:0 0 40px 0;
+}
+#contest{
+  background-color:#BDCD46;
+  height:150px;
+  background-image:url('../img/contest1.png'), url('../img/contest2.png');
+  background-position: left top, right bottom;
+  background-repeat:no-repeat;
+  background-size:contain;
+    
+
+    div{
+      float:left;
+
+        &:nth-child(1){
+          width:20%;
+          padding:25px;
+        }
+        &:nth-child(2){
+          width:80%;
+          padding:50px 30px 50px 0;
+          font-size:20px;
+        }
+        
+        img:nth-child(1){
+          width:45%;
+          margin:10px 0 0 20px;
+          
+        }
+        img:nth-child(2){
+          width:35%;
+          margin:40px 0 0 0;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+// Responsive - til mobil
+@media only screen and (max-width: 870px){
+  // Standard struktur
+  .mobileHidden{
+    display:none;
+  }
+
+  // Header
+  #logo img{
+    width:65%;
+    margin:20px 17.5%;
+  }
+  #loginBox{
+    top:0px;
+    right:10%;
+
+      &:hover{
+        padding:0px;
+        height:27px; 
+      }
+  }
+  button:hover{
+    background-color:transparent;
+    color:$darkblue;
+        
+  }
+
+  // Mobile nav
+  #mainNav{
+    float:none;
+    margin:70px auto 250px auto;
+  }
+  #mainNav div{
+    width:25%;
+  }
+  
+  #navIndex{
+    margin:20px 0 0 -10px;
+    transform: rotate(-2deg);
+    -ms-transform: rotate(-2deg); /* IE 9 */
+    -webkit-transform: rotate(-2deg); /* Safari and Chrome */
+
+      &:hover{
+        margin-top:20px;
+        transform: rotate(-2deg);
+        -ms-transform: rotate(-2deg); /* IE 9 */
+        -webkit-transform: rotate(-2deg); /* Safari and Chrome */
+      }
+  }
+
+  #navWish{
+    padding:42px 12px;
+    background-size:contain;
+    transform: rotate(3deg);
+    -ms-transform: rotate(3deg); /* IE 9 */
+    -webkit-transform: rotate(3deg); /* Safari and Chrome */
+
+      &:hover{
+        margin-top:0px;
+        transform: rotate(3deg);
+        -ms-transform: rotate(3deg); /* IE 9 */
+        -webkit-transform: rotate(3deg); /* Safari and Chrome */
+      }
+  }
+
+  #navAbout{
+    background-size:cover;
+    padding:36px 25px;
+    margin:20px 0 0 50px;
+
+      &:hover{
+        margin-top:20px;
+        transform: rotate(0deg);
+        -ms-transform: rotate(0deg); /* IE 9 */
+        -webkit-transform: rotate(0deg); /* Safari and Chrome */
+      }
+
+  }
+
+
+  // Index page 
+  #callToAction #help{
+    width:40%;
+    margin:-16% 0 0 10%;
+  }
+
+  #callToAction #wish{
+    width:35%;
+    margin:-14% 0 0 5%;
+  }
+
+  #contestText{
+    @include oswald;
+    width:100% !important;
+    padding:0px !important;
+      p{
+        padding:7% 5%;
+      }
+  }
+
+
+
 }
 
 

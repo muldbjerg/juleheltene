@@ -28,9 +28,9 @@
 				<a href="<?php echo $prelink ?>index.php"><img src="img/logo.png" alt="Juleheltene's logo"></a>
 			</div>
 
-			<div class="col-md-8">
+			<a href="login.php">
 				<div id="loginBox"><img src="img/lock.png">Log ind</div>
-			</div>
+			</a>
 
 			<nav id="mainNav" class="col-md-8">
 				<?php
@@ -38,5 +38,6 @@
 				?>
 			</nav>
 		</div>
+
 
 	</header>

@@ -77,7 +77,9 @@
 					</div>
 				</div>
 				<div id="buttonDiv">
-					<button>Se flere</button>
+					<a href="wishlists.php">
+						<button>Se flere</button>
+					</a>
 				</div>
 			</div>
 		
@@ -91,7 +93,7 @@
 				</div>
 
 				<div id="handbook" class="col-md-8">
-					<a href="">
+					<a href="handbook.php">
 						<img src="img/handbook.png" alt="Læs heltenes håndbog">
 					</a>
 				</div>
@@ -104,6 +106,18 @@
 
 
 		</div> <!-- Slut på content -->
+		<div id="contest">
+			<a href="contest.php">
+				<div class="mobileHidden">
+					<img src="img/heart.png" alt=""><img src="img/heart.png" alt="">
+				</div>
+				<div id="contestText">
+					<p>Konkurrencen om at lave den mest kreative indpakning, vinderen bliver udgivet i den næste udgave af hobby-nyt.</p>				
+				</div>
+			</a>
+		</div>
+
+
 	</div>	
 
 
