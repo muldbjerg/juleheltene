@@ -32,27 +32,341 @@
   width: device-width;
 }
 
-/* line 40, ../sass/screen.scss */
+/* line 57, ../sass/screen.scss */
 body {
   font-family: 'Georgia', serif;
   font-style: italic;
+  background-color: #20202d;
+  background-image: url("../img/snowBackground.png");
+  color: #333333;
 }
 
-/* line 45, ../sass/screen.scss */
+/* line 65, ../sass/screen.scss */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+}
+
+/* line 75, ../sass/screen.scss */
 #wrapper {
   max-width: 960px;
   width: 95%;
   margin: 0 auto;
 }
 
-/* line 51, ../sass/screen.scss */
+/* line 81, ../sass/screen.scss */
+.displayNone {
+  display: none;
+}
+
+/* line 85, ../sass/screen.scss */
+.content {
+  margin-top: 30px;
+  margin-bottom: 100px;
+  background-color: #f4f4f4;
+}
+
+/* line 91, ../sass/screen.scss */
+button {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  font-style: normal;
+  background-color: transparent;
+  border-radius: 4px;
+  border: 2px #20202d solid;
+  width: 100%;
+  transition: background-color 0.1s ease-in, color 0.1s;
+  -webkit-transition: background-color 0.1s ease-in, color 0.1s;
+}
+/* line 100, ../sass/screen.scss */
+button:hover {
+  background-color: #20202d;
+  color: #fff;
+  transition: background-color 0.3s ease-in, color 0.3s;
+  -webkit-transition: background-color 0.3s ease-in, color 0.3s;
+}
+
+/* line 108, ../sass/screen.scss */
+#buttonDiv {
+  width: 75px;
+  margin: 20px auto 50px auto;
+}
+
+/* line 112, ../sass/screen.scss */
+.theend {
+  margin-bottom: 35px;
+  clear: both;
+}
+
+/* line 116, ../sass/screen.scss */
+hr {
+  width: 90%;
+  border-top: 1px #959595 solid;
+}
+
+/* line 125, ../sass/screen.scss */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Oswald', sans-serif;
   text-transform: uppercase;
   font-style: normal;
 }
 
-/* line 56, ../sass/screen.scss */
-.displayNone {
-  display: none;
+/* line 128, ../sass/screen.scss */
+a, a:visited, a:hover {
+  text-decoration: none;
+}
+
+/* line 136, ../sass/screen.scss */
+#logo img {
+  width: 70%;
+  margin: 0 15%;
+  margin-bottom: 90px;
+}
+
+/* line 141, ../sass/screen.scss */
+#loginBox {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  font-style: normal;
+  width: 87px;
+  height: 27px;
+  position: absolute;
+  background-color: #272733;
+  color: #fff;
+  margin-left: 75%;
+  cursor: pointer;
+  transition: height 0.25s, padding-top 0.25s;
+  -webkit-transition: height 0.25s, padding-top 0.25s;
+}
+
+/* line 153, ../sass/screen.scss */
+#loginBox img {
+  width: 12px;
+  margin: 4px 7.5px 7.5px 12px;
+}
+
+/* line 157, ../sass/screen.scss */
+#loginBox:hover {
+  padding-top: 10px;
+  height: 37px;
+  transition: height 0.5s, padding-top 0.5s;
+  -webkit-transition: height 0.5s, padding-top 0.5s;
+}
+
+/* line 169, ../sass/screen.scss */
+#mainNav {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  font-style: normal;
+  font-size: 26px;
+  margin-top: 70px;
+  width: 450px;
+  float: right;
+}
+
+/* line 176, ../sass/screen.scss */
+#mainNav div {
+  width: 130px;
+  float: left;
+}
+
+/* line 180, ../sass/screen.scss */
+#mainNav a, a:visited {
+  color: #fff;
+  display: inline-block;
+}
+
+/* line 185, ../sass/screen.scss */
+#navIndex {
+  background-image: url("../img/gift1.png");
+  background-size: cover;
+  padding: 40px 15px 29px 15px;
+  margin: 20px 0 0 10px;
+  transform: rotate(-2deg);
+  -ms-transform: rotate(-2deg);
+  /* IE 9 */
+  -webkit-transform: rotate(-2deg);
+  /* Safari and Chrome */
+  transition: transform 0.3s ease-in, margin 0.4s;
+  -webkit-transition: -webkit-transform 0.3s ease-in, margin 0.4s;
+}
+/* line 196, ../sass/screen.scss */
+#navIndex:hover {
+  margin-top: 0px;
+  transform: rotate(8deg);
+  -ms-transform: rotate(8deg);
+  /* IE 9 */
+  -webkit-transform: rotate(8deg);
+  /* Safari and Chrome */
+  transition: transform 0.4s ease-in, margin 0.4s;
+  -webkit-transition: -webkit-transform 0.4s ease-in, margin 0.4s;
+}
+
+/* line 206, ../sass/screen.scss */
+#navWish {
+  background-image: url("../img/gift2.png");
+  background-size: cover;
+  padding: 33px 10px;
+  transform: rotate(3deg);
+  -ms-transform: rotate(3deg);
+  /* IE 9 */
+  -webkit-transform: rotate(3deg);
+  /* Safari and Chrome */
+  transition: transform 0.2s ease-in, margin 0.2s;
+  -webkit-transition: -webkit-transform 0.2s ease-in, margin 0.2s;
+}
+/* line 216, ../sass/screen.scss */
+#navWish:hover {
+  margin-top: -15px;
+  transform: rotate(-4deg);
+  -ms-transform: rotate(-4deg);
+  /* IE 9 */
+  -webkit-transform: rotate(-4deg);
+  /* Safari and Chrome */
+  transition: transform 0.3s ease-in, margin 0.3s;
+  -webkit-transition: -webkit-transform 0.3s ease-in, margin 0.3s;
+}
+
+/* line 226, ../sass/screen.scss */
+#navAbout {
+  background-image: url("../img/gift3.png");
+  background-size: cover;
+  padding: 36px 25px;
+  margin: 20px 0 0 20px;
+  transition: transform 0.1s ease-in, margin 0.1s;
+  -webkit-transition: -webkit-transform 0.1s ease-in, margin 0.1s;
+}
+/* line 234, ../sass/screen.scss */
+#navAbout:hover {
+  margin-top: 8px;
+  transform: rotate(-4deg);
+  -ms-transform: rotate(-4deg);
+  /* IE 9 */
+  -webkit-transform: rotate(-4deg);
+  /* Safari and Chrome */
+  transition: transform 0.3s ease-in, margin 0.3s;
+  -webkit-transition: -webkit-transform 0.3s ease-in, margin 0.3s;
+}
+
+/* line 252, ../sass/screen.scss */
+#frontDescription {
+  clear: both;
+  background-color: #f4f4f4;
+  width: 70%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 33px;
+  padding: 5px;
+  transform: rotate(-2deg);
+  -ms-transform: rotate(-2deg);
+  /* IE 9 */
+  -webkit-transform: rotate(-2deg);
+  /* Safari and Chrome */
+}
+
+/* line 265, ../sass/screen.scss */
+#indexPage .content {
+  margin-top: 260px;
+}
+
+/* line 269, ../sass/screen.scss */
+#callToAction #help {
+  width: 35%;
+  float: left;
+  margin: -18% 0 0 10%;
+  cursor: pointer;
+}
+/* line 274, ../sass/screen.scss */
+#callToAction #help img {
+  max-width: 100%;
+}
+/* line 278, ../sass/screen.scss */
+#callToAction #help:hover {
+  opacity: 0.98;
+}
+
+/* line 283, ../sass/screen.scss */
+#callToAction #wish {
+  width: 25%;
+  float: left;
+  margin: -16% 0 0 15%;
+  cursor: pointer;
+}
+/* line 288, ../sass/screen.scss */
+#callToAction #wish img {
+  max-width: 100%;
+}
+/* line 292, ../sass/screen.scss */
+#callToAction #wish:hover {
+  opacity: 0.9;
+}
+
+/* line 297, ../sass/screen.scss */
+#indexPage .wishLists {
+  padding-top: 160px;
+}
+/* line 300, ../sass/screen.scss */
+#indexPage .wishLists h2 {
+  text-align: center;
+  position: relative;
+  font-size: 50px;
+  margin-bottom: -18px;
+  z-index: 200;
+  color: #BDCD46;
+}
+
+/* line 310, ../sass/screen.scss */
+.wishList {
+  background-color: #fff;
+  padding: 10px;
+  margin-bottom: 20px;
+  -moz-box-shadow: 2px 2px 7px rgba(7, 7, 7, 0.25);
+  -webkit-box-shadow: 2px 2px 7px rgba(7, 7, 7, 0.25);
+  box-shadow: 2px 2px 7px rgba(7, 7, 7, 0.25);
+  transition: box-shadow 0.1s ease-in, -moz-box-shadow 0.1s ease-in;
+  -webkit-transition: -webkit-box-shadow 0.1s ease-in;
+}
+/* line 320, ../sass/screen.scss */
+.wishList a {
+  color: #333333;
+}
+/* line 324, ../sass/screen.scss */
+.wishList:hover {
+  -moz-box-shadow: 4px 4px 10px rgba(7, 7, 7, 0.45);
+  -webkit-box-shadow: 4px 4px 10px rgba(7, 7, 7, 0.45);
+  box-shadow: 4px 4px 10px rgba(7, 7, 7, 0.45);
+  transition: box-shadow 0.3s ease-in, -moz-box-shadow 0.3s ease-in;
+  -webkit-transition: -webkit-box-shadow 0.3s ease-in;
+}
+
+/* line 333, ../sass/screen.scss */
+#countUp {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  font-style: normal;
+  padding-top: 30px;
+  text-align: center;
+}
+/* line 338, ../sass/screen.scss */
+#countUp p:nth-child(2) {
+  font-size: 80px;
+  color: #40405a;
+  line-height: 1.1;
+}
+/* line 343, ../sass/screen.scss */
+#countUp p:nth-child(3) {
+  font-size: 26px;
+}
+
+/* line 347, ../sass/screen.scss */
+#handbook img {
+  width: 100%;
+  margin: 0 auto;
 }

@@ -4,75 +4,113 @@
 
 
 <div id="wrapper">
-
-	<div class="col-md-4">
-
-		<!-- Til oprettelse af brugere -->
-		<h3>Opret helte-konto</h3>
-		<form id="createHero" method="post"action="functions/createhero.php">
-			<input type="text" name="firstname" placeholder="Fornavn" required>
-			<input type="text" name="surname" placeholder="Efternavn" required>
-			<input type="email" name="mail" placeholder="Mail" required>
-			<input type="text" name="zipcode" placeholder="Postnr" required>
-			<input type="password" id="password" name="password" placeholder="Kode" required>
-			<input type="password" id="password_again" name="password_again" placeholder="Bekræft kode" required>
-			<input id="submit" type="submit" value="Opret helt">
-		</form>
-
+	
+	<div class="mobileHidden" id="frontDescription">
+		<h3>Jul er for alle - derfor hjælpeR juleheltene forældre give deres børn hvad de ønsker.</h3>
 	</div>
-
-	<div class="col-md-4">
-		<h3>Opret familie-konto</h3>
-		<form id="createFamily" method="post"action="functions/createfamily.php">
-			<input type="text" name="firstname" placeholder="Fornavn" required>
-			<input type="text" name="surname" placeholder="Efternavn" required>
-			<input type="email" name="mail" placeholder="Mail" required>
-			<input type="text" name="address" placeholder="Adresse" required>
-			<input type="text" name="zipcode" placeholder="Postnr" required>
-			<input type="password" id="password" name="password" placeholder="Kode" required>
-			<input type="password" id="password_again" name="password_again" placeholder="Bekræft kode" required>
-			<input type="checkbox" name="visit" value="0">Ønsker ikke fremmøde på adressen<br/>
-			<input id="submit" type="submit" value="Opret familie">
-		</form>
-	</div>
+	
+	
+	<div id="indexPage">
+		<div class="content col-md-12">
+			<div id="callToAction"> 
+				<div id="help">
+					<img src="img/helpPic.png" alt="Hjælp med en gave">
+				</div>
+				<div id="wish">
+					<img src="img/wishPic.png" alt="Skriv en ønskeseddel">
+				</div>
+			</div>
 
 
+			<div class="wishLists">
+				<h2>Hjælp børnene</h2>
+				<div class="col-md-4">
+					<div class="wishList">
+						<a href="#">
+							<h3>Ønskeseddel 1</h3>
+							<h5>Horsens | Signe, 12 år & Peter, 14 år</h5>
+							<p>Her er det ønskesedler fra et søskendepar. Hvis nogle undrer sig over de mange spillekonsoler drengen har, hænger det sammen med hans handicap. Almindeligt legetøj fanger ham ikke rigtig.</p>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="wishList">
+						<a href="#">
+							<h3>Ønskeseddel 2</h3>
+							<h5>Dreng, 7 år & Pige, 12 år</h5>
+							<p>Her er det ønskesedler fra et søskendepar. Hvis nogle undrer sig over de mange spillekonsoler drengen har, hænger det sammen med hans handicap. Almindeligt legetøj fanger ham ikke rigtig.</p>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="wishList">
+						<a href="#">
+							<h3>Sørens Ønskeseddel</h3>
+							<h5>Sørens Ønskeseddel</h5><p>Her er det ønskesedler fra et søskendepar. Hvis nogle undrer sig over de mange spillekonsoler drengen har, hænger det sammen med hans handicap. Almindeligt legetøj fanger ham ikke rigtig.</p>
+						</a>
+					</div>
+				</div>
+				
+				<div class="col-md-4">
+					<div class="wishList">
+						<a href="#">
+							<h3>Sørens Ønskeseddel</h3>
+							<h5>7 år | Horsens</h5>
+							<p>Her er det ønskesedler fra et søskendepar. Hvis nogle undrer sig over de mange spillekonsoler drengen har, hænger det sammen med hans handicap. Almindeligt legetøj fanger ham ikke rigtig.</p>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="wishList">
+						<a href="#">
+							<h3>Sørens Ønskeseddel</h3>
+							<h5>Sørens Ønskeseddel</h5><p>Her er det ønskesedler fra et søskendepar. Hvis nogle undrer sig over de mange spillekonsoler drengen har, hænger det sammen med hans handicap. Almindeligt legetøj fanger ham ikke rigtig.</p>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="wishList">
+						<a href="#">
+							<h3>Sørens Ønskeseddel</h3>
+							<h5>Sørens Ønskeseddel</h5><p>Her er det ønskesedler fra et søskendepar. Hvis nogle undrer sig over de mange spillekonsoler drengen har, hænger det sammen med hans handicap. Almindeligt legetøj fanger ham ikke rigtig.</p>
+						</a>
+					</div>
+				</div>
+				<div id="buttonDiv">
+					<button>Se flere</button>
+				</div>
+			</div>
+		
+			<hr>
 
-	<div class="col-md-4">
-		<h3>Helte</h3>
-		<?php
-			// Henter connecting elementerne til databasen
-			include_once('functions/connect.php');
+			<div>
+				<div id="countUp" class="col-md-4">
+					<p>Juleheltene har hjulpet</p>
+					<p>248</p>
+					<p>Børn i år</p>
+				</div>
 
-			// Indhenter informationer omkring brugerne
-			$users = mysql_query('SELECT * FROM user WHERE role LIKE "hero"');
+				<div id="handbook" class="col-md-8">
+					<a href="">
+						<img src="img/handbook.png" alt="Læs heltenes håndbog">
+					</a>
+				</div>
 
-			while($user = mysql_fetch_assoc($users)) { //Lav en while der kører alle rækker igennem
-				echo "<p><a href='hero.php?id=" . $user['user_id'] . "'>" . $user['firstname'] . "</a></p>";  
-			}
 
-		?>
-		<h3>Familier</h3>
-		<?php
-			// Henter connecting elementerne til databasen
-			include_once('functions/connect.php');
+			</div>
+			<div class="theend"></div>
 
-			// Indhenter informationer omkring brugerne
-			$users = mysql_query('SELECT * FROM user WHERE role LIKE "family"');
 
-			while($user = mysql_fetch_assoc($users)) { //Lav en while der kører alle rækker igennem
-				echo "<p><a href='family.php?id=" . $user['user_id'] . "'>Familien " . $user['surname'] . "</a></p>";  
-			}
 
-		?>
-	</div>
+
+		</div> <!-- Slut på content -->
+	</div>	
 
 
 </div> <!-- Slut på #wrapper -->
 
 
-
-
+	
 
 
 

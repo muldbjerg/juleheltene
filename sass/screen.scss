@@ -36,10 +36,40 @@
 }
 
 
+
+
+// Farver
+$darkblue: #20202d;
+$secoundblue: #272733;
+$backwhite: #f4f4f4;
+$lightgray: #959595;
+$textcolor: #333333;
+
+@mixin oswald{
+  font-family: 'Oswald', sans-serif;
+  text-transform:uppercase;
+  font-style:normal;
+}
+
+
+
 // Standard opsætning af siden
 body{
   font-family: 'Georgia', serif;
   font-style:italic;
+  background-color:$darkblue;
+  background-image:url('../img/snowBackground.png');
+  color:$textcolor;
+}
+
+*{
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  // Bruger box sizing - for at optimerer kasserne
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
 }
 
 #wrapper {
@@ -48,12 +78,279 @@ body{
   margin:0 auto;
 }
 
-h1, h2, h3, h4, h5, h6{
-  font-family: 'Oswald', sans-serif;
-  text-transform:uppercase;
-  font-style:normal;
-}
 .displayNone {
   display:none;
 }
+
+.content{
+  margin-top:30px;
+  margin-bottom:100px;
+  background-color:$backwhite;
+}
+
+button{
+  @include oswald;
+  background-color:transparent;
+  border-radius:4px;
+  border:2px $darkblue solid;
+  width:100%;
+  transition: background-color 0.1s ease-in, color 0.1s;
+  -webkit-transition: background-color 0.1s ease-in, color 0.1s;
+    
+    &:hover{
+      background-color:$darkblue;
+      color:#fff;
+      transition: background-color 0.3s ease-in, color 0.3s;
+      -webkit-transition: background-color 0.3s ease-in, color 0.3s;
+    }
+}
+
+#buttonDiv{
+  width:75px;
+  margin:20px auto 50px auto;
+}
+.theend{
+  margin-bottom:35px;
+  clear:both;
+}
+hr{
+  width:90%;
+  border-top:1px $lightgray solid;
+}
+
+
+
+
+// Font styling
+h1, h2, h3, h4, h5, h6{
+  @include oswald;
+}
+a, a:visited, a:hover{
+  text-decoration:none;
+}
+
+
+
+
+// Header
+#logo img{
+  width:70%;
+  margin:0 15%;
+  margin-bottom:90px;
+}
+#loginBox{
+  @include oswald;
+  width:87px;
+  height:27px;
+  position:absolute;
+  background-color:$secoundblue;
+  color:#fff; 
+  margin-left:75%;
+  cursor:pointer;
+  transition: height 0.25s, padding-top 0.25s;
+  -webkit-transition: height 0.25s, padding-top 0.25s ;
+}
+#loginBox img{
+  width:12px;
+  margin:4px 7.5px 7.5px 12px;
+}
+#loginBox:hover{
+  padding-top:10px;
+  height:37px;
+  transition: height 0.5s, padding-top 0.5s;
+  -webkit-transition: height 0.5s, padding-top 0.5s ;
+}
+
+
+
+
+
+// Desktop nav 
+#mainNav{
+  @include oswald;
+  font-size:26px;
+  margin-top:70px;
+  width:450px;
+  float:right;
+}
+#mainNav div{
+  width:130px;
+  float:left;
+}
+#mainNav a, a:visited{
+  color:#fff;
+  display: inline-block;
+}
+
+#navIndex{
+  background-image:url("../img/gift1.png");
+  background-size:cover;
+  padding:40px 15px 29px 15px;
+  margin:20px 0 0 10px;
+  transform: rotate(-2deg);
+  -ms-transform: rotate(-2deg); /* IE 9 */
+  -webkit-transform: rotate(-2deg); /* Safari and Chrome */
+  transition: transform 0.3s ease-in, margin 0.4s;
+  -webkit-transition: -webkit-transform 0.3s ease-in, margin 0.4s;
+
+    &:hover{
+      margin-top:0px;
+      transform: rotate(8deg);
+      -ms-transform: rotate(8deg); /* IE 9 */
+      -webkit-transform: rotate(8deg); /* Safari and Chrome */
+      transition: transform 0.4s ease-in, margin 0.4s;
+      -webkit-transition: -webkit-transform 0.4s ease-in, margin 0.4s;
+    }
+}
+
+#navWish{
+  background-image:url("../img/gift2.png");
+  background-size:cover;
+  padding:33px 10px;
+  transform: rotate(3deg);
+  -ms-transform: rotate(3deg); /* IE 9 */
+  -webkit-transform: rotate(3deg); /* Safari and Chrome */
+  transition: transform 0.2s ease-in, margin 0.2s;
+  -webkit-transition: -webkit-transform 0.2s ease-in, margin 0.2s;
+
+    &:hover{
+      margin-top:-15px;
+      transform: rotate(-4deg);
+      -ms-transform: rotate(-4deg); /* IE 9 */
+      -webkit-transform: rotate(-4deg); /* Safari and Chrome */
+      transition: transform 0.3s ease-in, margin 0.3s;
+      -webkit-transition: -webkit-transform 0.3s ease-in, margin 0.3s;
+    }
+}
+
+#navAbout{
+  background-image:url("../img/gift3.png");
+  background-size:cover;
+  padding:36px 25px;
+  margin:20px 0 0 20px;
+  transition: transform 0.1s ease-in, margin 0.1s;
+  -webkit-transition: -webkit-transform 0.1s ease-in, margin 0.1s;
+
+    &:hover{
+      margin-top:8px;
+      transform: rotate(-4deg);
+      -ms-transform: rotate(-4deg); /* IE 9 */
+      -webkit-transform: rotate(-4deg); /* Safari and Chrome */
+      transition: transform 0.3s ease-in, margin 0.3s;
+      -webkit-transition: -webkit-transform 0.3s ease-in, margin 0.3s;
+    }
+
+}
+
+
+
+
+
+
+
+// Index page 
+#frontDescription{
+  clear:both;
+  background-color:$backwhite;
+  width:70%;
+  margin:0 auto;
+  text-align:center;
+  font-size: 33px;
+  padding:5px;
+  transform: rotate(-2deg);
+  -ms-transform: rotate(-2deg); /* IE 9 */
+  -webkit-transform: rotate(-2deg); /* Safari and Chrome */
+}
+
+#indexPage .content{
+  margin-top:260px;
+}
+
+#callToAction #help{
+  width:35%;
+  float:left;
+  margin:-18% 0 0 10%;
+  cursor:pointer;
+    img{
+      max-width:100%;
+    }
+
+    &:hover{
+      opacity:0.98;
+    }
+}
+
+#callToAction #wish{
+  width:25%;
+  float:left;
+  margin:-16% 0 0 15%;
+  cursor:pointer;
+    img{
+      max-width:100%;
+    }
+
+    &:hover{
+      opacity:0.9;
+    }
+}
+
+#indexPage .wishLists{
+  padding-top:160px;
+
+    h2{
+      text-align:center;
+      position:relative;
+      font-size:50px;
+      margin-bottom:-18px;
+      z-index:200;
+      color:#BDCD46;
+    }
+}
+
+.wishList{
+  background-color:#fff;
+  padding:10px;
+  margin-bottom:20px;
+  -moz-box-shadow: 2px 2px 7px rgba(7,7,7,0.25);
+  -webkit-box-shadow: 2px 2px 7px rgba(7,7,7,0.25);
+  box-shadow: 2px 2px 7px rgba(7,7,7,0.25);
+  transition: box-shadow 0.1s ease-in, -moz-box-shadow 0.1s ease-in;
+  -webkit-transition: -webkit-box-shadow 0.1s ease-in;
+
+    a{
+      color:$textcolor;
+    }  
+
+    &:hover{
+      -moz-box-shadow: 4px 4px 10px rgba(7,7,7,0.45);
+      -webkit-box-shadow: 4px 4px 10px rgba(7,7,7,0.45);
+      box-shadow: 4px 4px 10px rgba(7,7,7,0.45);
+      transition: box-shadow 0.3s ease-in, -moz-box-shadow 0.3s ease-in;
+      -webkit-transition: -webkit-box-shadow 0.3s ease-in;
+    }
+}
+
+#countUp{
+  @include oswald;
+  padding-top:30px;
+  text-align:center;
+  
+    p:nth-child(2){
+      font-size:80px;
+      color:lighten($darkblue, 15%);
+      line-height:1.1;
+    }
+    p:nth-child(3){
+      font-size:26px;
+    }
+}
+#handbook img{
+  width:100%;
+  margin:0 auto;
+}
+
+
+
+
+
 
