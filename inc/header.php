@@ -32,10 +32,16 @@
 				<div id="loginBox"><img src="img/lock.png">Log ind</div>
 			</a>
 
-			<nav id="mainNav" class="col-md-8">
+			<nav id="mainNav" class="mobileHidden col-md-8">
 				<?php
 					include('inc/nav.php');
 				?>
+			</nav>
+			<nav id="mobileNav" class="col-md-12">
+				<?php
+					include('inc/nav_mobile.php');
+				?>
+				<div class="theend"></div>
 			</nav>
 		</div>
 

@@ -24,58 +24,71 @@
 
 			<div class="wishLists">
 				<h2>Hjælp børnene</h2>
-				<div class="col-md-4">
-					<div class="wishList">
-						<a href="#">
-							<h3>Ønskeseddel 1</h3>
-							<h5>Horsens | Signe, 12 år & Peter, 14 år</h5>
-							<p>Her er det ønskesedler fra et søskendepar. Hvis nogle undrer sig over de mange spillekonsoler drengen har, hænger det sammen med hans handicap. Almindeligt legetøj fanger ham ikke rigtig.</p>
-						</a>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="wishList">
-						<a href="#">
-							<h3>Ønskeseddel 2</h3>
-							<h5>Dreng, 7 år & Pige, 12 år</h5>
-							<p>Her er det ønskesedler fra et søskendepar. Hvis nogle undrer sig over de mange spillekonsoler drengen har, hænger det sammen med hans handicap. Almindeligt legetøj fanger ham ikke rigtig.</p>
-						</a>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="wishList">
-						<a href="#">
-							<h3>Sørens Ønskeseddel</h3>
-							<h5>Sørens Ønskeseddel</h5><p>Her er det ønskesedler fra et søskendepar. Hvis nogle undrer sig over de mange spillekonsoler drengen har, hænger det sammen med hans handicap. Almindeligt legetøj fanger ham ikke rigtig.</p>
-						</a>
-					</div>
-				</div>
+
+					<?php
+						// Connecter til mysql databasen
+						include_once('functions/connect.php');
+
+						// Henter informationer om familier fra SQL
+						$families = mysql_query("SELECT * FROM user WHERE role = 'family' GROUP BY user_id ORDER BY user_id DESC LIMIT 0,6");
+						$i = 0;
+
+						// Loop der skaber ønskesedlerne på forsiden
+						while($family = mysql_fetch_assoc($families)){
+
+							// Inddeler ønskesedlerne i rækker
+							if($i == 0 || $i == 3 ){
+								echo "<div class='listRow'>"; 
+							}
+
+								// Opretter ønskeselderne
+								echo "<div class='col-md-4'><div class='wishList'>";
+								echo "<h3>Ønskeseddel " . $family['user_id'] . "</h3>";
+									
+									// Henter familiens børn
+									$children_query = "SELECT * FROM children WHERE family_id = '" . $family['user_id'] . "'";
+									$children = mysql_query($children_query);
+
+									// Tæller hvor mange børn familien her
+									$children_count_query = "SELECT COUNT(*) FROM children WHERE family_id = '" . $family['user_id'] . "'";
+									$children_count_array = mysql_fetch_assoc(mysql_query($children_count_query));
+									$children_count = $children_count_array['COUNT(*)'];
+
+									echo "<h5>";
+									$n = 0;
+
+
+										while($child = mysql_fetch_assoc($children)) {
+											echo $child['name'] . ", " . $child['age'] . " år" ;
+											
+										
+											if($n >= 0 && $n < ($children_count - 1)){
+												echo " & ";
+											}
+
+											$n++;
+
+										}
+									echo "</h5>";
+
+									echo "<h6>" . $family['user_id'] . "</h6>"
+
+								echo "</div></div>";
+
+							if($i == 2 || $i == 5){
+								echo "</div>"; 
+							}
+
+							$i++;
+						}
+							
+
+							
+						
+					
+					?>
 				
-				<div class="col-md-4">
-					<div class="wishList">
-						<a href="#">
-							<h3>Sørens Ønskeseddel</h3>
-							<h5>7 år | Horsens</h5>
-							<p>Her er det ønskesedler fra et søskendepar. Hvis nogle undrer sig over de mange spillekonsoler drengen har, hænger det sammen med hans handicap. Almindeligt legetøj fanger ham ikke rigtig.</p>
-						</a>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="wishList">
-						<a href="#">
-							<h3>Sørens Ønskeseddel</h3>
-							<h5>Sørens Ønskeseddel</h5><p>Her er det ønskesedler fra et søskendepar. Hvis nogle undrer sig over de mange spillekonsoler drengen har, hænger det sammen med hans handicap. Almindeligt legetøj fanger ham ikke rigtig.</p>
-						</a>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="wishList">
-						<a href="#">
-							<h3>Sørens Ønskeseddel</h3>
-							<h5>Sørens Ønskeseddel</h5><p>Her er det ønskesedler fra et søskendepar. Hvis nogle undrer sig over de mange spillekonsoler drengen har, hænger det sammen med hans handicap. Almindeligt legetøj fanger ham ikke rigtig.</p>
-						</a>
-					</div>
-				</div>
+
 				<div id="buttonDiv">
 					<a href="wishlists.php">
 						<button>Se flere</button>
@@ -112,7 +125,7 @@
 					<img src="img/heart.png" alt=""><img src="img/heart.png" alt="">
 				</div>
 				<div id="contestText">
-					<p>Konkurrencen om at lave den mest kreative indpakning, vinderen bliver udgivet i den næste udgave af hobby-nyt.</p>				
+					<p><span class="oswald">KONKURENCE:</span> Lav den mest kreative indpakning, vinderen bliver udgivet i den næste udgave af hobby-nyt.</p>				
 				</div>
 			</a>
 		</div>

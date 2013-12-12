@@ -26,4 +26,11 @@
 	    family_id INT(1000)
 	)
 
+	CREATE TABLE wishes(
+	    wish_id INT AUTO_INCREMENT PRIMARY KEY,
+	    name VARCHAR(1000),
+	    child_id INT(200),
+	    user_id INT(200)
+	)
+
 ?>
