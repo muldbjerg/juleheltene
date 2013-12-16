@@ -30,18 +30,30 @@
 			<div id="aboutHeroes" class="contentAreas ">
 				<div id="heroPics" class="col-md-6 mobileHidden">
 					<?php
-						for ($i=0; $i<6; $i++) {
+												// Connecter til mysql databasen
+						include_once('functions/connect.php');
 
-							echo "<div class='col-md-4' id='heroPic" . $i . "'>hej</div>";
+						// Henter informationer om familier fra SQL
+						$heroes = mysql_query("SELECT * FROM user WHERE role = 'hero' ORDER BY created DESC LIMIT 0,9 ");
+						$i = 0;
 
+						while($hero = mysql_fetch_assoc($heroes)){
+							echo "<div class='col-md-3' id='heroPic" . $i . "' style='background-image:url('" . $hero['image_name'] . "')'>";
+							echo "<a href='hero.php?id=" . $hero['user_id'] . "'>" . $hero['firstname'] . "<img src='' alt=''></a>";
+							echo "</div>";
+
+
+							$i++;
 						}
-
 					?>
+
+
 				</div>
 				<div class="col-md-6">
 					<h1>Juleheltene</h1>
-					<p>Julehelte spreder glæde i juletiden, og hjælper familier med. Julehelte spreder glæde i juletiden, og hjælper familier med-Julehelte spreder glæde i juletiden, og hjælper familier med </p>
-					<p>Julehelte spreder glæde i juletiden, og hjælper familier med. Julehelte spreder glæde i juletiden, og hjælper familier med-Julehelte spreder glæde i juletiden, og hjælper familier med </p>
+					<p>Julehelte er et fællesskab af personer som alle har det til fælles at vi kæmper for at alle børn kan få en god jul. Vi husker julen som noget magisk da vi var børn og dette vil vi gerne give videre.</p>
+					<p>Julehelte er skabt af folk der giver uden at få noget tilbage for det. Det er helte som redder julen for andre. Rigtigt mange ligger inde med brugt tøj, legetøj og andre ting til børn som er i fin stand og som andre børn kan få glæde af. Det er nemt at hjælpe andre.</p> 
+					<p>Organisation bygger 100% på frivillige og har som mål at alle børn mindst skal have et ønske opfyldt til jul.</p>
 				</div>
 			</div>
 			
@@ -80,4 +92,5 @@
 
 <?php
 	include('inc/footer.php');
+	echo "<script src='js/instagram.js'></script>";
 ?>

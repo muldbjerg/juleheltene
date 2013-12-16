@@ -7,10 +7,46 @@
 		
 
 
-	<div id="indexPage">
+	<div id="loginPage">
 		<div class="content col-md-12">
-			hej med dig
+			<div class="col-md-8">
+				
 
+				<form id="loginForm" method="post" action="functions/loginfunction.php">
+					<input type="email" name="mail" placeholder="Mail"> 
+					<input type="password" name="password" placeholder="Kode"> 
+					<div id="buttonDiv" class="white">
+						<button>Login</button>
+					</div>
+				</form>
+				
+				<div id="buttonDiv" class="white logout">
+					<button id="logout">Log ud</button>	
+				</div>
+
+			</div>
+			
+			<div class="col-md-4">
+
+				<div class="col-md-5 createLinks">
+					<div id="buttonDiv" class="giftButton">
+						<a href="createHero.php">
+							<button>Opret helt</button>
+						</a>
+					</div>
+				</div>
+
+				<div class="col-md-5 col-md-offset-1  createLinks">
+					<div id="buttonDiv" class="wishlistButton">
+						<a href="createFamily.php">
+							<button>Skriv ønske- seddel</button>
+						</a>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="theend"></div>
 		</div> <!-- Slut på content -->
 
 	</div>
@@ -25,4 +61,5 @@
 
 <?php
 	include('inc/footer.php');
+	echo "<script src='js/login.js'></script>";
 ?>

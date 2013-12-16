@@ -39,12 +39,18 @@
 
 
 // Farver
+// fra designmanualen
 $darkblue: #20202d;
+$green: #BDCD46;
+$yellow: #FFF4AD;
+$brown: #69502F;
+$red: #890101;
+
+// sekundære farver til hjemmesiden
 $secoundblue: #272733;
 $backwhite: #f4f4f4;
 $lightgray: #959595;
 $textcolor: #333333;
-$green: #BDCD46;
 
 @mixin oswald{
   font-family: 'Oswald', sans-serif;
@@ -86,6 +92,7 @@ body{
 .content{
   background-color:$backwhite;
   clear:both;
+  padding-top:15px;
 }
 footer{
   background-image:url('../img/footerSnow.png');
@@ -121,14 +128,102 @@ button{
   width:120px;
   margin:20px auto 50px auto;
 }
+
+.white button{
+  color:#fff !important;
+  border:2px #fff solid;
+  // background-color:rgba(255,255,255,0.1);
+    
+    &:hover{
+      background-color:#fff;
+      color:$darkblue !important;
+    }
+}
 .theend{
   clear:both;
   padding-top:50px;
 }
+
+:focus {
+  outline-color: transparent;
+  outline-style: none;
+}
+
 hr{
   width:90%;
   border-top:1px $lightgray solid;
 }
+
+input{
+    @include oswald;
+    font-size:18px;
+    width:90%;
+    margin:0 5%;
+    padding:10px;
+    background-size:17px; 
+    background-position:12px 13px;
+    border:none;
+    border-bottom:1px $lightgray solid;
+    background-repeat:no-repeat;
+  
+    &:first-child{
+      -moz-border-radius: 0px;
+      -webkit-border-radius: 4px 4px 0px 0px;
+      border-radius: 4px 4px 0px 0px;
+    }
+
+    &:nth-last-of-type(1){
+      -moz-border-radius: 0px;
+      -webkit-border-radius: 0px 0px 4px 4px;
+      border-radius: 0px 0px 4px 4px; 
+      border:none;
+    }
+   
+}
+textarea{
+  width:100%;
+  max-width:100%;
+  height:150px;
+  border:none;
+  border-radius:4px;
+  font-family:Georgia;
+  padding:10px;
+}
+
+.checkbox {
+  width:60%;
+  margin:0 auto;
+  padding:15px 0;
+
+  
+    input[type="checkbox"]{
+      display:none;
+    }
+
+    input[type="checkbox"]:checked + label:before{
+      content: "\2713"; 
+      font-size: 24px; 
+      color: #f3f3f3;  
+      text-align: center;  
+      line-height: 15px; 
+    }
+    label:before { 
+      cursor:pointer; 
+      content: "";  
+      display: inline-block;  
+      width: 16px;  
+      height: 16px;    
+      position: relative;  
+      left: 0;  
+      background-color: #aaa;
+      border-radius: 3px; 
+      margin-right:10px;   
+    } 
+    label{
+      cursor:pointer;
+    } 
+}
+
 
 .contentAreas{
   clear:both;
@@ -142,11 +237,41 @@ hr{
 h1, h2, h3, h4, h5, h6{
   @include oswald;
 }
+h1{
+  font-size:40px;
+}
+h2{
+  font-size:35px;
+}
+h3{
+  font-size:28px;
+}
+h4{
+  font-size:24px;
+}
+h5{
+  font-size:20px;
+}
+h6{
+  font-size:14px;
+}
 a, a:visited, a:hover{
   text-decoration:none;
 }
 .oswald{
   @include oswald;
+}
+p{
+  margin:10px 0;
+}
+
+::selection{
+  color:$yellow;
+  background-color:$red;
+}
+::-moz-selection{
+  color:$yellow;
+  background-color:$red;
 }
 
 
@@ -158,28 +283,40 @@ a, a:visited, a:hover{
   margin:10px 15%;
   margin-bottom:90px;
 }
-#loginBox{
-  @include oswald;
-  width:87px;
-  height:27px;
-  position:absolute;
-  background-color:$secoundblue;
-  color:#fff; 
-  margin-left:70%;
-  cursor:pointer;
-  transition: height 0.25s, padding-top 0.25s;
-  -webkit-transition: height 0.25s, padding-top 0.25s ;
+.loginBox{
+    @include oswald;
+    height:27px;
+    position:absolute;
+    background-color:$secoundblue;
+    color:#fff; 
+    margin-left:70%;
+    cursor:pointer;
+    padding:4px 10px 4px 0;
+    transition: height 0.25s, padding-top 0.25s;
+    -webkit-transition: height 0.25s, padding-top 0.25s;
 
-    img{
-      width:12px;
-      margin:4px 7.5px 7.5px 12px;
-    }
-    &:hover{
-      padding-top:10px;
-    height:37px;
-    transition: height 0.5s, padding-top 0.5s;
-    -webkit-transition: height 0.5s, padding-top 0.5s ;
-    }
+      img{
+        width:12px;
+        margin:0px 8px 7.5px 12px;
+        float:left;
+      }
+      &:hover{
+        padding-top:14px;
+        height:37px;
+        background-position:10px 12.5px;
+        transition: height 0.5s, padding-top 0.5s;
+        -webkit-transition: height 0.5s, padding-top 0.5s;
+      }
+}
+header {
+  #loginBox{
+    @extend .loginBox;
+    
+  }
+  #logoutBox{
+    @extend .loginBox;
+    display:none;
+  }
 }
 
 
@@ -276,7 +413,7 @@ a, a:visited, a:hover{
 #frontDescription{
   clear:both;
   background-color:$backwhite;
-  width:70%;
+  width:72%;
   margin:0 auto;
   text-align:center;
   font-size: 33px;
@@ -300,7 +437,7 @@ a, a:visited, a:hover{
     }
 
     &:hover{
-      opacity:0.98;
+      opacity:0.9;
     }
 }
 
@@ -332,9 +469,7 @@ a, a:visited, a:hover{
 }
 
 .wishLists{
-  .col-md-4{
-    float:right !important;
-  }
+
 }
 
 .wishList{
@@ -346,11 +481,10 @@ a, a:visited, a:hover{
   box-shadow: 2px 2px 7px rgba(7,7,7,0.25);
   transition: box-shadow 0.1s ease-in, -moz-box-shadow 0.1s ease-in;
   -webkit-transition: -webkit-box-shadow 0.1s ease-in;
-
     a{
       color:$textcolor;
     }  
-
+  
     &:hover{
       -moz-box-shadow: 4px 4px 10px rgba(7,7,7,0.45);
       -webkit-box-shadow: 4px 4px 10px rgba(7,7,7,0.45);
@@ -358,6 +492,29 @@ a, a:visited, a:hover{
       transition: box-shadow 0.3s ease-in, -moz-box-shadow 0.3s ease-in;
       -webkit-transition: -webkit-box-shadow 0.3s ease-in;
     }
+    .wishLink{
+      text-align:right;
+      margin-top:10px;
+      color:$lightgray;
+    }
+    .description{
+      height:75px;
+      overflow:hidden;
+    }
+    .descriptionOverlay{
+      width:100%;
+      height:50px;
+      margin-top:-55px;
+      position:relative;
+      z-index:200;
+      background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%); /* FF3.6+ */
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+      background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
+      background: -o-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* Opera 11.10+ */
+      background: -ms-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* IE10+ */
+      background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* W3C */
+    }
+
 }
 
 .listRow{
@@ -402,7 +559,7 @@ a, a:visited, a:hover{
         }
         &:nth-child(2){
           width:80%;
-          padding:50px 30px 50px 0;
+          padding:40px 30px 35px 0;
           font-size:20px;
         }
     }
@@ -442,10 +599,11 @@ a, a:visited, a:hover{
 }
 
 #heroPics {
-  color:#F60;
+  // color:#F60;
   div{
     background-color:$secoundblue !important;
-    height:40px;
+    height:100px;
+    margin:10px;
 
   }
 }
@@ -456,6 +614,93 @@ a, a:visited, a:hover{
       width:16.66%;
     }
 }
+
+
+// Login siden - login.php
+#loginPage .content{
+  background-color:transparent;
+}
+#loginForm{
+  input{
+    width:70%;
+    margin:0 15%;
+    padding:10px 10px 10px 40px;
+    background-size:17px; 
+    background-position:12px 13px;
+    background-repeat:no-repeat;
+  
+    &:first-child{
+      background-image:url('../img/mail.png');
+    
+    }
+
+    &:nth-child(2){ 
+      background-image:url('../img/key.png');
+    }
+  }
+}
+
+.logout{
+  display:none;
+}
+
+.giftButton button{
+  height:130px;
+  background-color:transparent;
+  background-image:url('../img/gift4.png');
+  background-size:cover;
+  background-repeat:no-repeat;
+  border:none;
+    
+    &:hover{
+      background-color:transparent;
+      color:#fff;
+    }
+}
+
+.wishlistButton button{
+  height:150px;
+  background-color:transparent;
+  background-image:url('../img/wishList.png');
+  background-size:cover;
+  background-repeat:no-repeat;
+  border:none;
+    
+    &:hover{
+      background-color:transparent;
+      color:#666;
+    }
+}
+
+
+
+// createfamilyPage - createfamily.php
+#createfamilyPage{
+  input{
+    
+    &:nth-last-of-type(1){
+      -moz-border-radius: 0px;
+      -webkit-border-radius: 0px 0px 4px 4px;
+      border-radius: 0px 0px 4px 4px; 
+      border:none;
+    }
+   
+  }
+  #buttonDiv{
+    width:150px;
+  }
+
+}
+
+
+// createChildren - createchildren.php
+#plusButtonDiv{
+  width:30px;
+  float:right;
+  margin:10px 0;
+  margin-right:7.5%;
+}
+
 
 
 
@@ -483,12 +728,6 @@ a, a:visited, a:hover{
   }
   #loginBox{
     top:0px;
-    right:10%;
-
-      &:hover{
-        padding:0px;
-        height:27px; 
-      }
   }
   button:hover{
     background-color:transparent;
@@ -545,7 +784,7 @@ a, a:visited, a:hover{
         padding:7% 5%;
       }
   }
-  .listRow:nth-child(2){
+  .listRow:nth-child(3){
     display:none;
   }
 
@@ -553,7 +792,33 @@ a, a:visited, a:hover{
   #infographic {
     padding-bottom:50px;
   }
+  
 
+  // Loginsiden
+  #loginForm{
+    input{
+      width:100%;
+      margin:0px;
+    }
+  }
+
+  .createLinks{
+    width:45% !important;
+    float:left;
+    clear:none;
+    overflow:hidden;
+
+    #buttonDiv{
+      width:90px;
+    }
+
+      .giftButton button{
+        height:95px;
+      }
+      .wishlistButton button{
+        height:100px;
+      }
+  }
 
 }
 

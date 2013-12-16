@@ -31,11 +31,17 @@
 
 <div id="wrapper">
 
+	<div id="heroPage">
+		<div class="content col-md-12">
 
+			<div class="col-md-4">
+				<h1><?php echo $firstname . " " . $surname ?></h1>
+				<p>Helt siden <?php echo $created ?></p>
 
-	<div class="col-md-4">
-		<h1><?php echo $firstname . " " . $surname ?></h1>
-		<p>Helt siden <?php echo $created ?></p>
+			</div>
+
+			<div class="theend"></div>
+		</div>
 
 	</div>
 

@@ -32,7 +32,7 @@
   width: device-width;
 }
 
-/* line 58, ../sass/screen.scss */
+/* line 64, ../sass/screen.scss */
 body {
   font-family: 'Georgia', serif;
   font-style: italic;
@@ -41,7 +41,7 @@ body {
   color: #333333;
 }
 
-/* line 66, ../sass/screen.scss */
+/* line 72, ../sass/screen.scss */
 * {
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
@@ -54,32 +54,33 @@ body {
   /* Opera/IE 8+ */
 }
 
-/* line 76, ../sass/screen.scss */
+/* line 82, ../sass/screen.scss */
 #wrapper {
   max-width: 960px;
   width: 95%;
   margin: 0 auto;
 }
 
-/* line 82, ../sass/screen.scss */
+/* line 88, ../sass/screen.scss */
 .displayNone {
   display: none;
 }
 
-/* line 86, ../sass/screen.scss */
+/* line 92, ../sass/screen.scss */
 .content {
   background-color: #f4f4f4;
   clear: both;
+  padding-top: 15px;
 }
 
-/* line 90, ../sass/screen.scss */
+/* line 97, ../sass/screen.scss */
 footer {
   background-image: url("../img/footerSnow.png");
   margin-top: 300px;
   background-position: bottom;
   height: 38px;
 }
-/* line 95, ../sass/screen.scss */
+/* line 102, ../sass/screen.scss */
 footer img {
   margin-top: -175px;
   margin-right: 0px;
@@ -87,7 +88,7 @@ footer img {
   overflow: hidden;
 }
 
-/* line 103, ../sass/screen.scss */
+/* line 110, ../sass/screen.scss */
 button {
   font-family: 'Oswald', sans-serif;
   text-transform: uppercase;
@@ -100,7 +101,7 @@ button {
   transition: background-color 0.1s ease-in, color 0.1s;
   -webkit-transition: background-color 0.1s ease-in, color 0.1s;
 }
-/* line 113, ../sass/screen.scss */
+/* line 120, ../sass/screen.scss */
 button:hover {
   background-color: #20202d;
   color: #fff;
@@ -108,90 +109,237 @@ button:hover {
   -webkit-transition: background-color 0.3s ease-in, color 0.3s;
 }
 
-/* line 120, ../sass/screen.scss */
+/* line 127, ../sass/screen.scss */
 #buttonDiv {
   width: 120px;
   margin: 20px auto 50px auto;
 }
 
-/* line 124, ../sass/screen.scss */
+/* line 132, ../sass/screen.scss */
+.white button {
+  color: #fff !important;
+  border: 2px #fff solid;
+}
+/* line 137, ../sass/screen.scss */
+.white button:hover {
+  background-color: #fff;
+  color: #20202d !important;
+}
+
+/* line 142, ../sass/screen.scss */
 .theend {
   clear: both;
   padding-top: 50px;
 }
 
-/* line 128, ../sass/screen.scss */
+/* line 147, ../sass/screen.scss */
+:focus {
+  outline-color: transparent;
+  outline-style: none;
+}
+
+/* line 152, ../sass/screen.scss */
 hr {
   width: 90%;
   border-top: 1px #959595 solid;
 }
 
-/* line 133, ../sass/screen.scss */
+/* line 157, ../sass/screen.scss */
+input {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  font-style: normal;
+  font-size: 18px;
+  width: 90%;
+  margin: 0 5%;
+  padding: 10px;
+  background-size: 17px;
+  background-position: 12px 13px;
+  border: none;
+  border-bottom: 1px #959595 solid;
+  background-repeat: no-repeat;
+}
+/* line 169, ../sass/screen.scss */
+input:first-child {
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 4px 4px 0px 0px;
+  border-radius: 4px 4px 0px 0px;
+}
+/* line 175, ../sass/screen.scss */
+input:nth-last-of-type(1) {
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px 0px 4px 4px;
+  border-radius: 0px 0px 4px 4px;
+  border: none;
+}
+
+/* line 183, ../sass/screen.scss */
+textarea {
+  width: 100%;
+  max-width: 100%;
+  height: 150px;
+  border: none;
+  border-radius: 4px;
+  font-family: Georgia;
+  padding: 10px;
+}
+
+/* line 193, ../sass/screen.scss */
+.checkbox {
+  width: 60%;
+  margin: 0 auto;
+  padding: 15px 0;
+}
+/* line 199, ../sass/screen.scss */
+.checkbox input[type="checkbox"] {
+  display: none;
+}
+/* line 203, ../sass/screen.scss */
+.checkbox input[type="checkbox"]:checked + label:before {
+  content: "\2713";
+  font-size: 24px;
+  color: #f3f3f3;
+  text-align: center;
+  line-height: 15px;
+}
+/* line 210, ../sass/screen.scss */
+.checkbox label:before {
+  cursor: pointer;
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  position: relative;
+  left: 0;
+  background-color: #aaa;
+  border-radius: 3px;
+  margin-right: 10px;
+}
+/* line 222, ../sass/screen.scss */
+.checkbox label {
+  cursor: pointer;
+}
+
+/* line 228, ../sass/screen.scss */
 .contentAreas {
   clear: both;
   padding: 50px 0;
 }
 
-/* line 142, ../sass/screen.scss */
+/* line 237, ../sass/screen.scss */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Oswald', sans-serif;
   text-transform: uppercase;
   font-style: normal;
 }
 
-/* line 145, ../sass/screen.scss */
+/* line 240, ../sass/screen.scss */
+h1 {
+  font-size: 40px;
+}
+
+/* line 243, ../sass/screen.scss */
+h2 {
+  font-size: 35px;
+}
+
+/* line 246, ../sass/screen.scss */
+h3 {
+  font-size: 28px;
+}
+
+/* line 249, ../sass/screen.scss */
+h4 {
+  font-size: 24px;
+}
+
+/* line 252, ../sass/screen.scss */
+h5 {
+  font-size: 20px;
+}
+
+/* line 255, ../sass/screen.scss */
+h6 {
+  font-size: 14px;
+}
+
+/* line 258, ../sass/screen.scss */
 a, a:visited, a:hover {
   text-decoration: none;
 }
 
-/* line 148, ../sass/screen.scss */
+/* line 261, ../sass/screen.scss */
 .oswald {
   font-family: 'Oswald', sans-serif;
   text-transform: uppercase;
   font-style: normal;
 }
 
-/* line 156, ../sass/screen.scss */
+/* line 264, ../sass/screen.scss */
+p {
+  margin: 10px 0;
+}
+
+/* line 268, ../sass/screen.scss */
+::selection {
+  color: #fff4ad;
+  background-color: #890101;
+}
+
+/* line 272, ../sass/screen.scss */
+::-moz-selection {
+  color: #fff4ad;
+  background-color: #890101;
+}
+
+/* line 281, ../sass/screen.scss */
 #logo img {
   width: 70%;
   margin: 10px 15%;
   margin-bottom: 90px;
 }
 
-/* line 161, ../sass/screen.scss */
-#loginBox {
+/* line 286, ../sass/screen.scss */
+.loginBox, header #loginBox, header #logoutBox {
   font-family: 'Oswald', sans-serif;
   text-transform: uppercase;
   font-style: normal;
-  width: 87px;
   height: 27px;
   position: absolute;
   background-color: #272733;
   color: #fff;
   margin-left: 70%;
   cursor: pointer;
+  padding: 4px 10px 4px 0;
   transition: height 0.25s, padding-top 0.25s;
   -webkit-transition: height 0.25s, padding-top 0.25s;
 }
-/* line 173, ../sass/screen.scss */
-#loginBox img {
+/* line 298, ../sass/screen.scss */
+.loginBox img, header #loginBox img, header #logoutBox img {
   width: 12px;
-  margin: 4px 7.5px 7.5px 12px;
+  margin: 0px 8px 7.5px 12px;
+  float: left;
 }
-/* line 177, ../sass/screen.scss */
-#loginBox:hover {
-  padding-top: 10px;
+/* line 303, ../sass/screen.scss */
+.loginBox:hover, header #loginBox:hover, header #logoutBox:hover {
+  padding-top: 14px;
   height: 37px;
+  background-position: 10px 12.5px;
   transition: height 0.5s, padding-top 0.5s;
   -webkit-transition: height 0.5s, padding-top 0.5s;
 }
 
-/* line 189, ../sass/screen.scss */
+/* line 316, ../sass/screen.scss */
+header #logoutBox {
+  display: none;
+}
+
+/* line 326, ../sass/screen.scss */
 #mobileNav {
   display: none;
 }
 
-/* line 192, ../sass/screen.scss */
+/* line 329, ../sass/screen.scss */
 #mainNav {
   font-family: 'Oswald', sans-serif;
   text-transform: uppercase;
@@ -201,18 +349,18 @@ a, a:visited, a:hover {
   width: 450px;
   float: right;
 }
-/* line 199, ../sass/screen.scss */
+/* line 336, ../sass/screen.scss */
 #mainNav div {
   width: 130px;
   float: left;
 }
-/* line 203, ../sass/screen.scss */
+/* line 340, ../sass/screen.scss */
 #mainNav a, #mainNav a:visited {
   color: #fff;
   display: inline-block;
 }
 
-/* line 209, ../sass/screen.scss */
+/* line 346, ../sass/screen.scss */
 #navIndex {
   background-image: url("../img/gift1.png");
   background-size: cover;
@@ -226,7 +374,7 @@ a, a:visited, a:hover {
   transition: transform 0.3s ease-in, margin 0.4s;
   -webkit-transition: -webkit-transform 0.3s ease-in, margin 0.4s;
 }
-/* line 220, ../sass/screen.scss */
+/* line 357, ../sass/screen.scss */
 #navIndex:hover {
   margin-top: 0px;
   transform: rotate(8deg);
@@ -238,7 +386,7 @@ a, a:visited, a:hover {
   -webkit-transition: -webkit-transform 0.4s ease-in, margin 0.4s;
 }
 
-/* line 230, ../sass/screen.scss */
+/* line 367, ../sass/screen.scss */
 #navWish {
   background-image: url("../img/gift2.png");
   background-size: cover;
@@ -251,7 +399,7 @@ a, a:visited, a:hover {
   transition: transform 0.2s ease-in, margin 0.2s;
   -webkit-transition: -webkit-transform 0.2s ease-in, margin 0.2s;
 }
-/* line 240, ../sass/screen.scss */
+/* line 377, ../sass/screen.scss */
 #navWish:hover {
   margin-top: -15px;
   transform: rotate(-4deg);
@@ -263,7 +411,7 @@ a, a:visited, a:hover {
   -webkit-transition: -webkit-transform 0.3s ease-in, margin 0.3s;
 }
 
-/* line 250, ../sass/screen.scss */
+/* line 387, ../sass/screen.scss */
 #navAbout {
   background-image: url("../img/gift3.png");
   background-size: cover;
@@ -272,7 +420,7 @@ a, a:visited, a:hover {
   transition: transform 0.1s ease-in, margin 0.1s;
   -webkit-transition: -webkit-transform 0.1s ease-in, margin 0.1s;
 }
-/* line 258, ../sass/screen.scss */
+/* line 395, ../sass/screen.scss */
 #navAbout:hover {
   margin-top: 8px;
   transform: rotate(-4deg);
@@ -284,11 +432,11 @@ a, a:visited, a:hover {
   -webkit-transition: -webkit-transform 0.3s ease-in, margin 0.3s;
 }
 
-/* line 276, ../sass/screen.scss */
+/* line 413, ../sass/screen.scss */
 #frontDescription {
   clear: both;
   background-color: #f4f4f4;
-  width: 70%;
+  width: 72%;
   margin: 0 auto;
   text-align: center;
   font-size: 33px;
@@ -300,48 +448,48 @@ a, a:visited, a:hover {
   /* Safari and Chrome */
 }
 
-/* line 289, ../sass/screen.scss */
+/* line 426, ../sass/screen.scss */
 #indexPage .content {
   margin-top: 260px;
 }
 
-/* line 293, ../sass/screen.scss */
+/* line 430, ../sass/screen.scss */
 #callToAction #help {
   width: 35%;
   float: left;
   margin: -18% 0 0 10%;
   cursor: pointer;
 }
-/* line 298, ../sass/screen.scss */
+/* line 435, ../sass/screen.scss */
 #callToAction #help img {
   max-width: 100%;
 }
-/* line 302, ../sass/screen.scss */
+/* line 439, ../sass/screen.scss */
 #callToAction #help:hover {
-  opacity: 0.98;
+  opacity: 0.9;
 }
 
-/* line 307, ../sass/screen.scss */
+/* line 444, ../sass/screen.scss */
 #callToAction #wish {
   width: 25%;
   float: left;
   margin: -16% 0 0 15%;
   cursor: pointer;
 }
-/* line 312, ../sass/screen.scss */
+/* line 449, ../sass/screen.scss */
 #callToAction #wish img {
   max-width: 100%;
 }
-/* line 316, ../sass/screen.scss */
+/* line 453, ../sass/screen.scss */
 #callToAction #wish:hover {
   opacity: 0.9;
 }
 
-/* line 321, ../sass/screen.scss */
+/* line 458, ../sass/screen.scss */
 #indexPage .wishLists {
   padding-top: 160px;
 }
-/* line 324, ../sass/screen.scss */
+/* line 461, ../sass/screen.scss */
 #indexPage .wishLists h2 {
   text-align: center;
   position: relative;
@@ -351,7 +499,7 @@ a, a:visited, a:hover {
   color: #BDCD46;
 }
 
-/* line 334, ../sass/screen.scss */
+/* line 475, ../sass/screen.scss */
 .wishList {
   background-color: #fff;
   padding: 10px;
@@ -362,11 +510,11 @@ a, a:visited, a:hover {
   transition: box-shadow 0.1s ease-in, -moz-box-shadow 0.1s ease-in;
   -webkit-transition: -webkit-box-shadow 0.1s ease-in;
 }
-/* line 344, ../sass/screen.scss */
+/* line 484, ../sass/screen.scss */
 .wishList a {
   color: #333333;
 }
-/* line 348, ../sass/screen.scss */
+/* line 488, ../sass/screen.scss */
 .wishList:hover {
   -moz-box-shadow: 4px 4px 10px rgba(7, 7, 7, 0.45);
   -webkit-box-shadow: 4px 4px 10px rgba(7, 7, 7, 0.45);
@@ -374,13 +522,44 @@ a, a:visited, a:hover {
   transition: box-shadow 0.3s ease-in, -moz-box-shadow 0.3s ease-in;
   -webkit-transition: -webkit-box-shadow 0.3s ease-in;
 }
+/* line 495, ../sass/screen.scss */
+.wishList .wishLink {
+  text-align: right;
+  margin-top: 10px;
+  color: #959595;
+}
+/* line 500, ../sass/screen.scss */
+.wishList .description {
+  height: 75px;
+  overflow: hidden;
+}
+/* line 504, ../sass/screen.scss */
+.wishList .descriptionOverlay {
+  width: 100%;
+  height: 50px;
+  margin-top: -55px;
+  position: relative;
+  z-index: 200;
+  background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(100%, white));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
+  /* W3C */
+}
 
-/* line 357, ../sass/screen.scss */
+/* line 520, ../sass/screen.scss */
 .listRow {
   clear: both;
 }
 
-/* line 361, ../sass/screen.scss */
+/* line 524, ../sass/screen.scss */
 #countUp {
   font-family: 'Oswald', sans-serif;
   text-transform: uppercase;
@@ -388,24 +567,24 @@ a, a:visited, a:hover {
   padding: 30px 0;
   text-align: center;
 }
-/* line 366, ../sass/screen.scss */
+/* line 529, ../sass/screen.scss */
 #countUp p:nth-child(2) {
   font-size: 80px;
   color: #40405a;
   line-height: 1.1;
 }
-/* line 371, ../sass/screen.scss */
+/* line 534, ../sass/screen.scss */
 #countUp p:nth-child(3) {
   font-size: 26px;
 }
 
-/* line 375, ../sass/screen.scss */
+/* line 538, ../sass/screen.scss */
 #handbook img {
   width: 100%;
   margin: 0 auto;
 }
 
-/* line 379, ../sass/screen.scss */
+/* line 542, ../sass/screen.scss */
 #contest {
   background-color: #bdcd46;
   height: 150px;
@@ -414,41 +593,41 @@ a, a:visited, a:hover {
   background-repeat: no-repeat;
   background-size: contain;
 }
-/* line 387, ../sass/screen.scss */
+/* line 550, ../sass/screen.scss */
 #contest a, #contest a:visited {
   color: #fff;
 }
-/* line 390, ../sass/screen.scss */
+/* line 553, ../sass/screen.scss */
 #contest div {
   float: left;
 }
-/* line 393, ../sass/screen.scss */
+/* line 556, ../sass/screen.scss */
 #contest div:nth-child(1) {
   width: 20%;
   padding: 25px;
 }
-/* line 397, ../sass/screen.scss */
+/* line 560, ../sass/screen.scss */
 #contest div:nth-child(2) {
   width: 80%;
-  padding: 50px 30px 50px 0;
+  padding: 40px 30px 35px 0;
   font-size: 20px;
 }
-/* line 404, ../sass/screen.scss */
+/* line 567, ../sass/screen.scss */
 #contest img:nth-child(1) {
   width: 45%;
   margin: 10px 0 0 20px;
 }
-/* line 409, ../sass/screen.scss */
+/* line 572, ../sass/screen.scss */
 #contest img:nth-child(2) {
   width: 30%;
   margin: 40px 0 0 0;
 }
 
-/* line 418, ../sass/screen.scss */
+/* line 581, ../sass/screen.scss */
 #infographic {
   padding-bottom: 400px;
 }
-/* line 420, ../sass/screen.scss */
+/* line 583, ../sass/screen.scss */
 #infographic p {
   font-family: 'Oswald', sans-serif;
   text-transform: uppercase;
@@ -456,7 +635,7 @@ a, a:visited, a:hover {
   font-size: 24px;
   text-align: center;
 }
-/* line 425, ../sass/screen.scss */
+/* line 588, ../sass/screen.scss */
 #infographic .nr {
   background-color: #bdcd46;
   width: 20px;
@@ -464,52 +643,131 @@ a, a:visited, a:hover {
   float: left;
   margin-right: 5px;
 }
-/* line 432, ../sass/screen.scss */
+/* line 595, ../sass/screen.scss */
 #infographic img {
   width: 90%;
   margin: 10px auto;
 }
 
-/* line 441, ../sass/screen.scss */
+/* line 603, ../sass/screen.scss */
+#heroPics div {
+  background-color: #272733 !important;
+  height: 100px;
+  margin: 10px;
+}
+
+/* line 613, ../sass/screen.scss */
 #instagramFeed img {
   width: 16.66%;
 }
 
+/* line 620, ../sass/screen.scss */
+#loginPage .content {
+  background-color: transparent;
+}
+
+/* line 624, ../sass/screen.scss */
+#loginForm input {
+  width: 70%;
+  margin: 0 15%;
+  padding: 10px 10px 10px 40px;
+  background-size: 17px;
+  background-position: 12px 13px;
+  background-repeat: no-repeat;
+}
+/* line 632, ../sass/screen.scss */
+#loginForm input:first-child {
+  background-image: url("../img/mail.png");
+}
+/* line 637, ../sass/screen.scss */
+#loginForm input:nth-child(2) {
+  background-image: url("../img/key.png");
+}
+
+/* line 643, ../sass/screen.scss */
+.logout {
+  display: none;
+}
+
+/* line 647, ../sass/screen.scss */
+.giftButton button {
+  height: 130px;
+  background-color: transparent;
+  background-image: url("../img/gift4.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: none;
+}
+/* line 655, ../sass/screen.scss */
+.giftButton button:hover {
+  background-color: transparent;
+  color: #fff;
+}
+
+/* line 661, ../sass/screen.scss */
+.wishlistButton button {
+  height: 150px;
+  background-color: transparent;
+  background-image: url("../img/wishList.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: none;
+}
+/* line 669, ../sass/screen.scss */
+.wishlistButton button:hover {
+  background-color: transparent;
+  color: #666;
+}
+
+/* line 681, ../sass/screen.scss */
+#createfamilyPage input:nth-last-of-type(1) {
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px 0px 4px 4px;
+  border-radius: 0px 0px 4px 4px;
+  border: none;
+}
+/* line 689, ../sass/screen.scss */
+#createfamilyPage #buttonDiv {
+  width: 150px;
+}
+
+/* line 697, ../sass/screen.scss */
+#plusButtonDiv {
+  width: 30px;
+  float: right;
+  margin: 10px 0;
+  margin-right: 7.5%;
+}
+
 @media only screen and (max-width: 765px) {
-  /* line 457, ../sass/screen.scss */
+  /* line 716, ../sass/screen.scss */
   .mobileHidden {
     display: none;
   }
 
-  /* line 461, ../sass/screen.scss */
+  /* line 720, ../sass/screen.scss */
   #indexPage .content {
     margin-top: 120px;
   }
 
-  /* line 466, ../sass/screen.scss */
+  /* line 725, ../sass/screen.scss */
   #logo img {
     width: 65%;
     margin: 20px 17.5%;
   }
 
-  /* line 470, ../sass/screen.scss */
+  /* line 729, ../sass/screen.scss */
   #loginBox {
     top: 0px;
-    right: 10%;
-  }
-  /* line 474, ../sass/screen.scss */
-  #loginBox:hover {
-    padding: 0px;
-    height: 27px;
   }
 
-  /* line 479, ../sass/screen.scss */
+  /* line 732, ../sass/screen.scss */
   button:hover {
     background-color: transparent;
     color: #20202d;
   }
 
-  /* line 486, ../sass/screen.scss */
+  /* line 739, ../sass/screen.scss */
   #mobileNav {
     display: block;
     width: 100%;
@@ -517,12 +775,12 @@ a, a:visited, a:hover {
     padding: 20px;
     margin-bottom: 50px;
   }
-  /* line 493, ../sass/screen.scss */
+  /* line 746, ../sass/screen.scss */
   #mobileNav img {
     width: 37.5%;
     float: left;
   }
-  /* line 498, ../sass/screen.scss */
+  /* line 751, ../sass/screen.scss */
   #mobileNav #navIndexM img {
     width: 25%;
     transform: rotate(-6deg);
@@ -531,7 +789,7 @@ a, a:visited, a:hover {
     -webkit-transform: rotate(-6deg);
     /* Safari and Chrome */
   }
-  /* line 504, ../sass/screen.scss */
+  /* line 757, ../sass/screen.scss */
   #mobileNav #navAboutM img {
     margin-left: -5px;
     transform: rotate(5deg);
@@ -541,40 +799,66 @@ a, a:visited, a:hover {
     /* Safari and Chrome */
   }
 
-  /* line 514, ../sass/screen.scss */
+  /* line 767, ../sass/screen.scss */
   #callToAction #help {
     width: 40%;
     margin: -16% 0 0 10%;
   }
 
-  /* line 519, ../sass/screen.scss */
+  /* line 772, ../sass/screen.scss */
   #callToAction #wish {
     width: 35%;
     margin: -14% 0 0 5%;
   }
 
-  /* line 523, ../sass/screen.scss */
+  /* line 776, ../sass/screen.scss */
   #indexPage .wishLists {
     padding-top: 25%;
   }
 
-  /* line 527, ../sass/screen.scss */
+  /* line 780, ../sass/screen.scss */
   #contestText {
     width: 100% !important;
     padding: 0px !important;
   }
-  /* line 530, ../sass/screen.scss */
+  /* line 783, ../sass/screen.scss */
   #contestText p {
     padding: 7% 5%;
   }
 
-  /* line 534, ../sass/screen.scss */
-  .listRow:nth-child(2) {
+  /* line 787, ../sass/screen.scss */
+  .listRow:nth-child(3) {
     display: none;
   }
 
-  /* line 539, ../sass/screen.scss */
+  /* line 792, ../sass/screen.scss */
   #infographic {
     padding-bottom: 50px;
+  }
+
+  /* line 799, ../sass/screen.scss */
+  #loginForm input {
+    width: 100%;
+    margin: 0px;
+  }
+
+  /* line 805, ../sass/screen.scss */
+  .createLinks {
+    width: 45% !important;
+    float: left;
+    clear: none;
+    overflow: hidden;
+  }
+  /* line 811, ../sass/screen.scss */
+  .createLinks #buttonDiv {
+    width: 90px;
+  }
+  /* line 815, ../sass/screen.scss */
+  .createLinks .giftButton button {
+    height: 95px;
+  }
+  /* line 818, ../sass/screen.scss */
+  .createLinks .wishlistButton button {
+    height: 100px;
   }
 }

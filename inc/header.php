@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="css/screen.css" />
 
 <!-- Viewport -->
-<meta name="viewport" content="width=device-width">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 
 </head>
@@ -30,6 +30,10 @@
 
 			<a href="login.php">
 				<div id="loginBox"><img src="img/lock.png">Log ind</div>
+			</a>
+			<a href="login.php">
+
+				<div id="logoutBox"><img src="img/profil.png">Log ud <input type="text" class="displayNone u" value="0"></div>
 			</a>
 
 			<nav id="mainNav" class="mobileHidden col-md-8">

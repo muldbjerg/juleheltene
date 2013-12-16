@@ -2,35 +2,34 @@
 
 	include('connect.php');
 
-	mysql_query("CREATE TABLE user(
+	CREATE TABLE user(
 	    user_id INT AUTO_INCREMENT PRIMARY KEY,
 		firstname VARCHAR(200),
 		surname VARCHAR(200),
 	    role VARCHAR(20),
+	    wishlist INT(10),
 	    description VARCHAR(1000),
 	    image_name VARCHAR(400),
 	    mail VARCHAR(200),
 	    password VARCHAR(200),
 	    address VARCHAR(400),
-	    zipcode INT(9999),
+	    zipcode INT(4),
 		visit BIT,
 	    created DATETIME
-	)") OR DIE(mysql_error());
+	)
 
 
 	CREATE TABLE children(
 	    child_id INT AUTO_INCREMENT PRIMARY KEY,
 	    name VARCHAR(400),
-	    age INT(200),
-	    gender VARCHAR(50),
-	    family_id INT(1000)
+	    age INT(4),
+	    family_id INT(20)
 	)
 
 	CREATE TABLE wishes(
 	    wish_id INT AUTO_INCREMENT PRIMARY KEY,
-	    name VARCHAR(1000),
-	    child_id INT(200),
-	    user_id INT(200)
+	    wish VARCHAR(1000),
+	    child_id INT(20)
 	)
 
 ?>

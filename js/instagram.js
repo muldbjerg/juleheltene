@@ -16,7 +16,7 @@ $(document).ready(function(){
 	              
 	            $.each(data, function(i, item) { 
 	            	if(i < pics) { 
-	            		var instagram = ("<img src='" + data[i].src + "'>");
+	            		var instagram = ("<a href='" + data[i].url + "' target='_blank'><img src='" + data[i].src + "'></a>");
 	                	$(instagramFeed).append(instagram);
 	                }
 	            });  

@@ -6,7 +6,7 @@
 <div id="wrapper">
 	
 	<div class="mobileHidden" id="frontDescription">
-		<h3>Jul er for alle - derfor hjælpeR juleheltene forældre give deres børn hvad de ønsker.</h3>
+		<h3>Jul er for alle - derfor hjælpeR juleheltene forældre give deres børn hvad de ønsker sig</h3>
 	</div>
 	
 	
@@ -14,10 +14,14 @@
 		<div class="content col-md-12">
 			<div id="callToAction"> 
 				<div id="help">
-					<img src="img/helpPic.png" alt="Hjælp med en gave">
+					<a href="createHero.php">
+						<img src="img/helpPic.png" alt="Hjælp med en gave">
+					</a>
 				</div>
 				<div id="wish">
-					<img src="img/wishPic.png" alt="Skriv en ønskeseddel">
+					<a href="createFamily.php">
+						<img src="img/wishPic.png" alt="Skriv en ønskeseddel">
+					</a>
 				</div>
 			</div>
 
@@ -30,20 +34,22 @@
 						include_once('functions/connect.php');
 
 						// Henter informationer om familier fra SQL
-						$families = mysql_query("SELECT * FROM user WHERE role = 'family' GROUP BY user_id ORDER BY user_id DESC LIMIT 0,6");
+						$families = mysql_query("SELECT * FROM user INNER JOIN children ON user.user_id = children.family_id GROUP BY user_id ORDER BY wishlist DESC LIMIT 0,6 ");
 						$i = 0;
+
 
 						// Loop der skaber ønskesedlerne på forsiden
 						while($family = mysql_fetch_assoc($families)){
 
-							// Inddeler ønskesedlerne i rækker
+							// Inddeler ønskesedlerne i rækker - listRow
 							if($i == 0 || $i == 3 ){
 								echo "<div class='listRow'>"; 
 							}
-
+								// 
 								// Opretter ønskeselderne
-								echo "<div class='col-md-4'><div class='wishList'>";
-								echo "<h3>Ønskeseddel " . $family['user_id'] . "</h3>";
+								echo "<div class='col-md-4'><div class='wishList js-masonry'>";
+								echo "<a href='family.php?id=" . $family['user_id'] . "'>";
+								echo "<h3>Ønskeseddel " . $family['wishlist'] . "</h3>";
 									
 									// Henter familiens børn
 									$children_query = "SELECT * FROM children WHERE family_id = '" . $family['user_id'] . "'";
@@ -53,15 +59,14 @@
 									$children_count_query = "SELECT COUNT(*) FROM children WHERE family_id = '" . $family['user_id'] . "'";
 									$children_count_array = mysql_fetch_assoc(mysql_query($children_count_query));
 									$children_count = $children_count_array['COUNT(*)'];
-
-									echo "<h5>";
 									$n = 0;
 
-
+									// Skriver børnenes navn og alder
+									echo "<h6>";
 										while($child = mysql_fetch_assoc($children)) {
 											echo $child['name'] . ", " . $child['age'] . " år" ;
 											
-										
+											// Sætter & ind mellem børnene
 											if($n >= 0 && $n < ($children_count - 1)){
 												echo " & ";
 											}
@@ -69,22 +74,26 @@
 											$n++;
 
 										}
-									echo "</h5>";
+									echo "</h6>";
 
-									echo "<h6>" . $family['user_id'] . "</h6>"
+									// echo "";
 
-								echo "</div></div>";
 
+									echo "<p class='description'>" . $family['description'] . "</p><div class='descriptionOverlay'></div>";
+
+									echo "<p class='wishLink'>Se ønskesedlen</p>";
+
+
+								echo "</a></div></div>";
+
+
+							// Indsæter skel mellem rækkerne - stopper listRow 
 							if($i == 2 || $i == 5){
 								echo "</div>"; 
 							}
 
 							$i++;
-						}
-							
-
-							
-						
+						}			
 					
 					?>
 				
@@ -143,4 +152,7 @@
 
 <?php
 	include('inc/footer.php');
+	// echo "<script src='js/index.js'></script>";
+	// echo "<script src='js/masonry.min.js'></script>";
+
 ?>
