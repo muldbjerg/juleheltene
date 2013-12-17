@@ -124,7 +124,7 @@ button{
       -webkit-transition: background-color 0.3s ease-in, color 0.3s;
     }
 }
-#buttonDiv{
+.buttonDiv{
   width:120px;
   margin:20px auto 50px auto;
 }
@@ -604,7 +604,9 @@ header {
     background-color:$secoundblue !important;
     height:100px;
     margin:10px;
-
+    // background-image:url("../upload/default.png");
+    background-image:url('../upload/default.png');
+    background-size:cover;
   }
 }
 
@@ -619,6 +621,8 @@ header {
 // Login siden - login.php
 #loginPage .content{
   background-color:transparent;
+
+
 }
 #loginForm{
   input{
@@ -638,13 +642,17 @@ header {
       background-image:url('../img/key.png');
     }
   }
+  #respons{
+    text-align:center;
+    color:#fff;
+  }
 }
 
 .logout{
   display:none;
 }
 
-.giftButton button{
+#giftButton button{
   height:130px;
   background-color:transparent;
   background-image:url('../img/gift4.png');
@@ -658,7 +666,7 @@ header {
     }
 }
 
-.wishlistButton button{
+#wishlistButton button{
   height:150px;
   background-color:transparent;
   background-image:url('../img/wishList.png');
@@ -686,7 +694,7 @@ header {
     }
    
   }
-  #buttonDiv{
+  .buttonDiv{
     width:150px;
   }
 
@@ -694,13 +702,38 @@ header {
 
 
 // createChildren - createchildren.php
-#plusButtonDiv{
+#plusButtonDiv{ // Læg et nyt ønske til
   width:30px;
   float:right;
   margin:10px 0;
   margin-right:7.5%;
+
 }
 
+#createchildrenPage{
+  .buttonDiv{
+    width:100%;
+    padding:20px 26%; 
+    clear:both;
+
+      button{
+        width:40%;
+        float:left;
+        margin-left:2%;
+      }
+      button:first-child{
+        margin-left:0%;
+      }
+  }
+}
+
+.childField{
+  margin:20px 0;
+
+    .col-md-6{
+      margin:20px 0;
+    }
+}
 
 
 
@@ -808,17 +841,36 @@ header {
     clear:none;
     overflow:hidden;
 
-    #buttonDiv{
-      width:90px;
-    }
+      .buttonDiv{
+        width:90px;
+      }
 
-      .giftButton button{
+      #giftButton button{
         height:95px;
       }
-      .wishlistButton button{
+      #wishlistButton button{
         height:100px;
       }
   }
+  
+  // Createchildren siden
+  #createchildrenPage{
+    .buttonDiv{
+      padding:20px 10%; 
+
+        button{
+          width:45%;
+        }
+    }
+  }
+
+  .childField{
+  margin:20px 0;
+
+    .col-md-6{
+      margin:20px 0;
+    }
+}
 
 }
 

@@ -1,4 +1,11 @@
 <?php
+	$user_id = $_POST['user_id'];
+
+	// Tjekker om brugerne forsøger at springe over.
+	// if(empty($user_id)){
+	// 	header('Location: index.php');
+	// }
+
 	include('inc/header.php');
 ?>
 
@@ -10,37 +17,40 @@
 
 			<h3>Skriv ønskesedler</h3>
 
-				<?php
-					$user_id = $_POST['user_id'];
-				?>
 
-
-				<!-- Til oprettelse af brugere -->
+				<!-- Til oprettelse af børn -->
 				<form id="createChild" method="post">
-					<div class="col-md-6">
-						<input name="childname[]" placeholder="Skriv navn">
-						<input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
-						<input name="childage[]" placeholder="Skriv alder">
+					<div class="childField field1 col-md-12">
+						<div class="col-md-6">
+							<input name="childname[]" placeholder="Skriv navn">
+							<input type="number" id="user_id" name="user_id" value="<?php echo $user_id; ?>">
+							<input name="childage[]" placeholder="Skriv alder">
+							
+						</div>
+						
+						<!-- <div class="col-md-6">
+							<div>
+								<input class="wishes" type="text" name="0wish[]" placeholder="Skriv ønske">
+								<input class="wishes" type="text" name="0wish[]" placeholder="Skriv ønske">
+								<input class="wishes" type="text" name="0wish[]" placeholder="Skriv ønske">
+								<input class="wishes" type="text" name="0wish[]" placeholder="Skriv ønske">
+								<input class="wishes" type="text" name="0wish[]" placeholder="Skriv ønske">
+							</div>
+						</div> -->
 
-						<div id="buttonDiv">
-							<button>Færdig</button>
-						</div>
+						<div class="theend"></div>
 					</div>
-					
-					<div class="col-md-6">
-						<div>
-							<input class="wishes" type="text" name="wish[]" placeholder="Skriv ønske">
-							<input class="wishes" type="text" name="wish[]" placeholder="Skriv ønske">
-							<input class="wishes" type="text" name="wish[]" placeholder="Skriv ønske">
-						</div>
-						<div id="plusButtonDiv">
-							<button id="plusButton">+</button>
-						</div>
+
+					<!-- <hr> -->
+
+					<div class="buttonDiv col-md-12">
+							<button id="oneMoreChild">Et barn mere</button>
+							<button type="submit">Næste trin</button>
 					</div>
 					
 				</form>
 
-				<hr>
+				
 							
 			
 			<div class="theend"></div>

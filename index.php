@@ -37,68 +37,63 @@
 						$families = mysql_query("SELECT * FROM user INNER JOIN children ON user.user_id = children.family_id GROUP BY user_id ORDER BY wishlist DESC LIMIT 0,6 ");
 						$i = 0;
 
+						echo "<div class='listRow'>";
 
 						// Loop der skaber ønskesedlerne på forsiden
 						while($family = mysql_fetch_assoc($families)){
 
-							// Inddeler ønskesedlerne i rækker - listRow
-							if($i == 0 || $i == 3 ){
-								echo "<div class='listRow'>"; 
-							}
-								// 
-								// Opretter ønskeselderne
-								echo "<div class='col-md-4'><div class='wishList js-masonry'>";
-								echo "<a href='family.php?id=" . $family['user_id'] . "'>";
-								echo "<h3>Ønskeseddel " . $family['wishlist'] . "</h3>";
-									
-									// Henter familiens børn
-									$children_query = "SELECT * FROM children WHERE family_id = '" . $family['user_id'] . "'";
-									$children = mysql_query($children_query);
+							 
+							// Opretter ønskeselderne
+							echo "<div class='col-md-4'><div class='wishList js-masonry'>";
+							echo "<a href='family.php?id=" . $family['user_id'] . "'>";
+							echo "<h3>Ønskeseddel " . $family['wishlist'] . "</h3>";
+								
+								// Henter familiens børn
+								$children_query = "SELECT * FROM children WHERE family_id = '" . $family['user_id'] . "'";
+								$children = mysql_query($children_query);
 
-									// Tæller hvor mange børn familien her
-									$children_count_query = "SELECT COUNT(*) FROM children WHERE family_id = '" . $family['user_id'] . "'";
-									$children_count_array = mysql_fetch_assoc(mysql_query($children_count_query));
-									$children_count = $children_count_array['COUNT(*)'];
-									$n = 0;
+								// Tæller hvor mange børn familien her
+								$children_count_query = "SELECT COUNT(*) FROM children WHERE family_id = '" . $family['user_id'] . "'";
+								$children_count_array = mysql_fetch_assoc(mysql_query($children_count_query));
+								$children_count = $children_count_array['COUNT(*)'];
+								$n = 0;
 
-									// Skriver børnenes navn og alder
-									echo "<h6>";
-										while($child = mysql_fetch_assoc($children)) {
-											echo $child['name'] . ", " . $child['age'] . " år" ;
-											
-											// Sætter & ind mellem børnene
-											if($n >= 0 && $n < ($children_count - 1)){
-												echo " & ";
-											}
-
-											$n++;
-
+								// Skriver børnenes navn og alder
+								echo "<h6>";
+									while($child = mysql_fetch_assoc($children)) {
+										echo $child['name'] . ", " . $child['age'] . " år" ;
+										
+										// Sætter & ind mellem børnene
+										if($n >= 0 && $n < ($children_count - 1)){
+											echo " & ";
 										}
-									echo "</h6>";
 
-									// echo "";
+										$n++;
 
+									}
+								echo "</h6>";
 
-									echo "<p class='description'>" . $family['description'] . "</p><div class='descriptionOverlay'></div>";
-
-									echo "<p class='wishLink'>Se ønskesedlen</p>";
-
-
-								echo "</a></div></div>";
+								// echo "";
 
 
-							// Indsæter skel mellem rækkerne - stopper listRow 
-							if($i == 2 || $i == 5){
-								echo "</div>"; 
-							}
+								echo "<p class='description'>" . $family['description'] . "</p><div class='descriptionOverlay'></div>";
+
+								echo "<p class='wishLink'>Se ønskesedlen</p>";
+
+
+							echo "</a></div></div>";
+
+
 
 							$i++;
-						}			
+						}		
+
+						echo "</div>";	
 					
 					?>
 				
 
-				<div id="buttonDiv">
+				<div class="buttonDiv">
 					<a href="wishlists.php">
 						<button>Se flere</button>
 					</a>

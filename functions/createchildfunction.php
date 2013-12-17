@@ -1,35 +1,52 @@
 <?php
 
 	// Henter connect oplysninger
-	include('connect.php');
+	include_once('connect.php');
 
-	
-
-	$childname = mysql_real_escape_string(strip_tags(trim(addslashes($_POST["childname"]))));
-	$childage = mysql_real_escape_string(strip_tags(trim(addslashes($_POST["childage"]))));
-	$family_id = mysql_real_escape_string(strip_tags(trim(addslashes($_POST["family_id"]))));
+	$childname = $_POST["childname"];
+	$childage = $_POST["childage"];
+	$family_id = $_POST["user_id"];
 
 	// Hvis man prøver at gå direkte derind - bliver man sendt tilbage
-	if(!isset($childname)){
-		header('Location: ../index.php');
-	}
-
+	// if(!isset($childname)){
+	// 	header('Location: ../index.php');
+	// }
 
 	$i = 0;
 
-	foreach ($childname as $child) {
-		if(!empty($child) && !empty($childage[$i])){
-			// Indsætter børnene i databasem
-			$createchild = mysql_query("INSERT INTO children (name, age, family_id) VALUES ('$child', '" . $childage[$i] . "', '" . $childgender[$i] . "', '$family_id')") or die(mysql_error());
+	if(!empty($family_id)){
+		if (is_array($childname)){
+			foreach($childname as $child) {
+				if(!empty($child) && !empty($childage[$i])){
+					// Indsætter børnene i databasem
+					$createchild = mysql_query("INSERT INTO children (name, age, family_id) VALUES ('$child', '" . $childage[$i] . "', '$family_id')") or die(mysql_error());
+				}
+				else{
+					$respons = "Failure";
+				}
+				$i++;
+			}
 		}
-		$i++;	
-	}
+		else{
+			if(!empty($childname) && !empty($childage[$i])){
+				// Indsætter børnene i databasem
+				$createchild = mysql_query("INSERT INTO children (name, age, family_id) VALUES ('$childname', '" . $childage[$i] . "', '$family_id')") or die(mysql_error());
+			}
+			else{
+				$respons = "Failure";
+			}
+		}
 
-	if($createchild){
-		$respons = "Succes";
+		if($createchild){
+			$respons = "Succes+" . $family_id;
+		}
+		else{
+			$respons = "Failure";
+		}
 	}
-	else {
-		$respons = "Sorry - something went wrong, have a beer and try again later.";
+	
+	else{
+		$respons = "Failure";
 	}
 
 	echo json_encode(array("msg" => $respons));

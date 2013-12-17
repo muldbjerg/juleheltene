@@ -9,7 +9,7 @@
 		<div class="col-md-12 content">
 
 			<div class="col-md-4 ">
-
+				
 				<!-- Til oprettelse af brugere -->
 				<h3>Opret helte-konto</h3>
 				<form id="createHero" method="post">
@@ -20,7 +20,7 @@
 					<input type="password" id="password" name="password" placeholder="Kode" required>
 					<input type="password" id="password_again" name="password_again" placeholder="Bekræft kode" required>
 				
-					<div id="buttonDiv">
+					<div class="buttonDiv">
 						<button type="submit">Opret helt</button>
 					</div>
 				</form>

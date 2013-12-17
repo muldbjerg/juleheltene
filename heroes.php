@@ -34,12 +34,21 @@
 						include_once('functions/connect.php');
 
 						// Henter informationer om familier fra SQL
-						$heroes = mysql_query("SELECT * FROM user WHERE role = 'hero' ORDER BY created DESC LIMIT 0,9 ");
+						$heroes = mysql_query("SELECT firstname, image_name FROM user WHERE role = 'hero' ORDER BY created DESC LIMIT 0,6 ");
 						$i = 0;
 
 						while($hero = mysql_fetch_assoc($heroes)){
-							echo "<div class='col-md-3' id='heroPic" . $i . "' style='background-image:url('" . $hero['image_name'] . "')'>";
-							echo "<a href='hero.php?id=" . $hero['user_id'] . "'>" . $hero['firstname'] . "<img src='' alt=''></a>";
+							// Indlæser billede af helten
+							$hero_image = $hero['image_name'];
+							
+							// Her er stien til helte billedet 
+							$hero_image_path_long = "style='background-image:url(" . $hero_image . ")'";
+
+							// Her undersøges der om billedet findes - ellers sættes der ikke noget ind
+							$hero_image_path = (empty($hero_image)) ? "" : "$hero_image_path_long";
+
+							// Her oprettes der så mange felter som der er helte - dog max 6.
+							echo "<div class='col-md-3' id='heroPic" . $i . "' " . $hero_image_path . ">" ;
 							echo "</div>";
 
 

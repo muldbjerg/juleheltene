@@ -110,7 +110,7 @@ button:hover {
 }
 
 /* line 127, ../sass/screen.scss */
-#buttonDiv {
+.buttonDiv {
   width: 120px;
   margin: 20px auto 50px auto;
 }
@@ -654,19 +654,21 @@ header #logoutBox {
   background-color: #272733 !important;
   height: 100px;
   margin: 10px;
+  background-image: url("../upload/default.png");
+  background-size: cover;
 }
 
-/* line 613, ../sass/screen.scss */
+/* line 615, ../sass/screen.scss */
 #instagramFeed img {
   width: 16.66%;
 }
 
-/* line 620, ../sass/screen.scss */
+/* line 622, ../sass/screen.scss */
 #loginPage .content {
   background-color: transparent;
 }
 
-/* line 624, ../sass/screen.scss */
+/* line 628, ../sass/screen.scss */
 #loginForm input {
   width: 70%;
   margin: 0 15%;
@@ -675,22 +677,27 @@ header #logoutBox {
   background-position: 12px 13px;
   background-repeat: no-repeat;
 }
-/* line 632, ../sass/screen.scss */
+/* line 636, ../sass/screen.scss */
 #loginForm input:first-child {
   background-image: url("../img/mail.png");
 }
-/* line 637, ../sass/screen.scss */
+/* line 641, ../sass/screen.scss */
 #loginForm input:nth-child(2) {
   background-image: url("../img/key.png");
 }
+/* line 645, ../sass/screen.scss */
+#loginForm #respons {
+  text-align: center;
+  color: #fff;
+}
 
-/* line 643, ../sass/screen.scss */
+/* line 651, ../sass/screen.scss */
 .logout {
   display: none;
 }
 
-/* line 647, ../sass/screen.scss */
-.giftButton button {
+/* line 655, ../sass/screen.scss */
+#giftButton button {
   height: 130px;
   background-color: transparent;
   background-image: url("../img/gift4.png");
@@ -698,14 +705,14 @@ header #logoutBox {
   background-repeat: no-repeat;
   border: none;
 }
-/* line 655, ../sass/screen.scss */
-.giftButton button:hover {
+/* line 663, ../sass/screen.scss */
+#giftButton button:hover {
   background-color: transparent;
   color: #fff;
 }
 
-/* line 661, ../sass/screen.scss */
-.wishlistButton button {
+/* line 669, ../sass/screen.scss */
+#wishlistButton button {
   height: 150px;
   background-color: transparent;
   background-image: url("../img/wishList.png");
@@ -713,25 +720,25 @@ header #logoutBox {
   background-repeat: no-repeat;
   border: none;
 }
-/* line 669, ../sass/screen.scss */
-.wishlistButton button:hover {
+/* line 677, ../sass/screen.scss */
+#wishlistButton button:hover {
   background-color: transparent;
   color: #666;
 }
 
-/* line 681, ../sass/screen.scss */
+/* line 689, ../sass/screen.scss */
 #createfamilyPage input:nth-last-of-type(1) {
   -moz-border-radius: 0px;
   -webkit-border-radius: 0px 0px 4px 4px;
   border-radius: 0px 0px 4px 4px;
   border: none;
 }
-/* line 689, ../sass/screen.scss */
-#createfamilyPage #buttonDiv {
+/* line 697, ../sass/screen.scss */
+#createfamilyPage .buttonDiv {
   width: 150px;
 }
 
-/* line 697, ../sass/screen.scss */
+/* line 705, ../sass/screen.scss */
 #plusButtonDiv {
   width: 30px;
   float: right;
@@ -739,35 +746,61 @@ header #logoutBox {
   margin-right: 7.5%;
 }
 
+/* line 714, ../sass/screen.scss */
+#createchildrenPage .buttonDiv {
+  width: 100%;
+  padding: 20px 26%;
+  clear: both;
+}
+/* line 719, ../sass/screen.scss */
+#createchildrenPage .buttonDiv button {
+  width: 40%;
+  float: left;
+  margin-left: 2%;
+}
+/* line 724, ../sass/screen.scss */
+#createchildrenPage .buttonDiv button:first-child {
+  margin-left: 0%;
+}
+
+/* line 730, ../sass/screen.scss */
+.childField {
+  margin: 20px 0;
+}
+/* line 733, ../sass/screen.scss */
+.childField .col-md-6 {
+  margin: 20px 0;
+}
+
 @media only screen and (max-width: 765px) {
-  /* line 716, ../sass/screen.scss */
+  /* line 749, ../sass/screen.scss */
   .mobileHidden {
     display: none;
   }
 
-  /* line 720, ../sass/screen.scss */
+  /* line 753, ../sass/screen.scss */
   #indexPage .content {
     margin-top: 120px;
   }
 
-  /* line 725, ../sass/screen.scss */
+  /* line 758, ../sass/screen.scss */
   #logo img {
     width: 65%;
     margin: 20px 17.5%;
   }
 
-  /* line 729, ../sass/screen.scss */
+  /* line 762, ../sass/screen.scss */
   #loginBox {
     top: 0px;
   }
 
-  /* line 732, ../sass/screen.scss */
+  /* line 765, ../sass/screen.scss */
   button:hover {
     background-color: transparent;
     color: #20202d;
   }
 
-  /* line 739, ../sass/screen.scss */
+  /* line 772, ../sass/screen.scss */
   #mobileNav {
     display: block;
     width: 100%;
@@ -775,12 +808,12 @@ header #logoutBox {
     padding: 20px;
     margin-bottom: 50px;
   }
-  /* line 746, ../sass/screen.scss */
+  /* line 779, ../sass/screen.scss */
   #mobileNav img {
     width: 37.5%;
     float: left;
   }
-  /* line 751, ../sass/screen.scss */
+  /* line 784, ../sass/screen.scss */
   #mobileNav #navIndexM img {
     width: 25%;
     transform: rotate(-6deg);
@@ -789,7 +822,7 @@ header #logoutBox {
     -webkit-transform: rotate(-6deg);
     /* Safari and Chrome */
   }
-  /* line 757, ../sass/screen.scss */
+  /* line 790, ../sass/screen.scss */
   #mobileNav #navAboutM img {
     margin-left: -5px;
     transform: rotate(5deg);
@@ -799,66 +832,84 @@ header #logoutBox {
     /* Safari and Chrome */
   }
 
-  /* line 767, ../sass/screen.scss */
+  /* line 800, ../sass/screen.scss */
   #callToAction #help {
     width: 40%;
     margin: -16% 0 0 10%;
   }
 
-  /* line 772, ../sass/screen.scss */
+  /* line 805, ../sass/screen.scss */
   #callToAction #wish {
     width: 35%;
     margin: -14% 0 0 5%;
   }
 
-  /* line 776, ../sass/screen.scss */
+  /* line 809, ../sass/screen.scss */
   #indexPage .wishLists {
     padding-top: 25%;
   }
 
-  /* line 780, ../sass/screen.scss */
+  /* line 813, ../sass/screen.scss */
   #contestText {
     width: 100% !important;
     padding: 0px !important;
   }
-  /* line 783, ../sass/screen.scss */
+  /* line 816, ../sass/screen.scss */
   #contestText p {
     padding: 7% 5%;
   }
 
-  /* line 787, ../sass/screen.scss */
+  /* line 820, ../sass/screen.scss */
   .listRow:nth-child(3) {
     display: none;
   }
 
-  /* line 792, ../sass/screen.scss */
+  /* line 825, ../sass/screen.scss */
   #infographic {
     padding-bottom: 50px;
   }
 
-  /* line 799, ../sass/screen.scss */
+  /* line 832, ../sass/screen.scss */
   #loginForm input {
     width: 100%;
     margin: 0px;
   }
 
-  /* line 805, ../sass/screen.scss */
+  /* line 838, ../sass/screen.scss */
   .createLinks {
     width: 45% !important;
     float: left;
     clear: none;
     overflow: hidden;
   }
-  /* line 811, ../sass/screen.scss */
-  .createLinks #buttonDiv {
+  /* line 844, ../sass/screen.scss */
+  .createLinks .buttonDiv {
     width: 90px;
   }
-  /* line 815, ../sass/screen.scss */
-  .createLinks .giftButton button {
+  /* line 848, ../sass/screen.scss */
+  .createLinks #giftButton button {
     height: 95px;
   }
-  /* line 818, ../sass/screen.scss */
-  .createLinks .wishlistButton button {
+  /* line 851, ../sass/screen.scss */
+  .createLinks #wishlistButton button {
     height: 100px;
+  }
+
+  /* line 858, ../sass/screen.scss */
+  #createchildrenPage .buttonDiv {
+    padding: 20px 10%;
+  }
+  /* line 861, ../sass/screen.scss */
+  #createchildrenPage .buttonDiv button {
+    width: 45%;
+  }
+
+  /* line 867, ../sass/screen.scss */
+  .childField {
+    margin: 20px 0;
+  }
+  /* line 870, ../sass/screen.scss */
+  .childField .col-md-6 {
+    margin: 20px 0;
   }
 }

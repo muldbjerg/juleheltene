@@ -33,10 +33,16 @@ $(document).ready(function(){
 			submit.before("<p id='password_error_hero'>Koderne er ikke ens</p>");
 			$('#password_error_hero').delay(3000).fadeOut();
 		}
-		
+				
+   	})
 
-
-		
+	password_again.on('keyup', function(){	
+   		if(password.val() == password_again.val()){
+   			password_again.css('background-color', '#BDCD46');
+   		}
+   		else{
+   			password_again.css('background-color', '#890101');
+   		}   		
    	})
 
 

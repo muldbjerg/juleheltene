@@ -32,7 +32,7 @@
 				<h6>Skriv lidt om familiens situation</h6>
 				<textarea name="description" required></textarea>
 
-				<div id="buttonDiv">
+				<div class="buttonDiv">
 					<button>Næste step</button>
 				</div>
 				</form>
